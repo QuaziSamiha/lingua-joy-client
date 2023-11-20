@@ -1,8 +1,3 @@
-# React + Vite
+# Naming Reason
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+"Lingua" is a Latin word that means "language" or "tongue." It is often used in English to refer to language-related concepts, such as in the term "linguistics," which is the scientific study of language and its structure.

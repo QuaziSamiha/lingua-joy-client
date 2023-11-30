@@ -1,0 +1,52 @@
+[
+  {
+    "className": "Basic",
+    "totalStudents": 25,
+    "totalSeats": 30,
+    "availableSeats": 5,
+    "price": 55,
+    "time": "9:30 am - 10:30 am",
+    "daysOfWeek": ["Tuesday", "Thursday", "Saturday"],
+    "totalCourseDuration": "7 weeks"
+  },
+  {
+    "className": "Fluent",
+    "totalStudents": 25,
+    "totalSeats": 30,
+    "availableSeats": 5,
+    "price": 70,
+    "time": "2:00 pm - 3:30 pm",
+    "daysOfWeek": ["Monday", "Wednesday", "Friday"],
+    "totalCourseDuration": "9 weeks"
+  },
+  {
+    "className": "Semi-Fluent",
+    "totalStudents": 25,
+    "totalSeats": 30,
+    "availableSeats": 5,
+    "price": 65,
+    "time": "10:30 am - 12:00 pm",
+    "daysOfWeek": ["Tuesday", "Thursday", "Saturday"],
+    "totalCourseDuration": "5 weeks"
+  },
+  {
+    "className": "Advance",
+    "totalStudents": 25,
+    "totalSeats": 30,
+    "availableSeats": 5,
+    "price": 95,
+    "time": "3:30 pm - 5:30 pm",
+    "daysOfWeek": ["Monday", "Wednesday", "Friday"],
+    "totalCourseDuration": "11 weeks"
+  },
+  {
+    "className": "Intensive",
+    "totalStudents": 25,
+    "totalSeats": 30,
+    "availableSeats": 5,
+    "price": 85,
+    "time": "1:00 pm - 2:30 pm",
+    "daysOfWeek": ["Wednesday", "Friday", "Sunday"],
+    "totalCourseDuration": "13 weeks"
+  }
+]

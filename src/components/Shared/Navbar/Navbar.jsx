@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
-// import logo from "../../../assets/images/logo.png";
 const Navbar = () => {
   const routes = [
     {
       id: "",
       name: "Home",
     },
-    {
-      id: "aboutus",
-      name: "About Us",
-    },
+    // {
+    //   id: "aboutus",
+    //   name: "About Us",
+    // },
     { id: "instructors", name: "Instructors" },
     {
       id: "courses",
@@ -23,10 +22,9 @@ const Navbar = () => {
   return (
     <>
       <section>
-        <nav className="h-14 flex justify-between text-white bg-black bg-opacity-30">
+        <nav className="h-14 fixed z-10 w-full flex justify-between text-white bg-black bg-opacity-30">
           <div className="mt-2 mx-6">
             <h1 className="uppercase text-3xl font-bold">Lingua Joy</h1>
-            {/* <p className="text-sm">Learning Power</p> */}
           </div>
           <div>
             <ul className="flex mt-3">
@@ -37,7 +35,8 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <div className="mt-1 mx-6">
+          <div className="mt-1 mx-6 flex">
+            <p className="mt-1 py-1.5">profile</p>
             <Link to="signin">
               <button className="mt-1 bg-black px-6 py-1.5 rounded">
                 Sign In

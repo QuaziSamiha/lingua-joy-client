@@ -31,8 +31,9 @@ const SignIn = () => {
                   type="email"
                   placeholder="Your Email"
                   className="border-b outline-none border-[#37474f] w-full pl-1"
-                  {...register("email")}
+                  {...register("email", {required: true})}
                 />
+                {errors.email && <span className="text-red-600 text-xs font-medium">Email is required</span>}
               </div>
               <div className="my-3">
                 <label className="label">
@@ -46,7 +47,7 @@ const SignIn = () => {
                   className="border-b outline-none border-[#37474f] w-full pl-1"
                   {...register("password", { required: true })}
                 />
-                {errors.password && <span>This field is required</span>}
+                {errors.password && <span className="text-red-600 text-xs font-medium">Password is required</span>}
               </div>
               <div className="my-8">
                 <input

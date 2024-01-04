@@ -1,11 +1,11 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import ban1 from "../../../assets/images/home/ban1.png";
-import ban2 from "../../../assets/images/home/ban2.png";
-import ban3 from "../../../assets/images/home/ban3.png";
-import ban4 from "../../../assets/images/home/ban4.png";
-import ban5 from "../../../assets/images/home/ban5.png";
-import ban6 from "../../../assets/images/home/ban6.png";
+import ban1 from "../../../assets/images/banner/ban1.png";
+import ban2 from "../../../assets/images/banner/ban2.png";
+import ban3 from "../../../assets/images/banner/ban3.png";
+import ban4 from "../../../assets/images/banner/ban4.png";
+import ban5 from "../../../assets/images/banner/ban5.png";
+import ban6 from "../../../assets/images/banner/ban6.png";
 function ban() {
   return (
     <>

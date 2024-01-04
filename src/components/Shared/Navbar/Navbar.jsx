@@ -22,7 +22,8 @@ const Navbar = () => {
   return (
     <>
       <section>
-        <nav className="h-14 fixed z-10 w-full flex justify-between text-white bg-black bg-opacity-30">
+        {/* <nav className="h-14 fixed z-10 w-full flex justify-between text-white bg-black bg-opacity-30"> */}
+        <nav className="h-14 w-full flex justify-between text-white bg-black bg-opacity-30">
           <div className="mt-2 mx-6">
             <h1 className="uppercase text-3xl font-bold">Lingua Joy</h1>
           </div>

@@ -23,19 +23,19 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       {
-        path: "/instructors",
+        path: "instructors",
         element: <Instructors />,
       },
       {
-        path: "/courses",
+        path: "courses",
         element: <Courses />,
       },
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <Dashboard />,
       },
       {
-        path: "/signin",
+        path: "signin",
         element: <SignIn />,
       },
       {

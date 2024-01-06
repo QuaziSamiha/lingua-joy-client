@@ -5,18 +5,18 @@ import { createContext } from "react";
 export const InstructorContext = createContext();
 
 export const InstructorProvider = ({ children }) => {
-  const [allInstructor, setAllInstructor] = useState([]);
+  const [allInstructors, setAllInstructors] = useState([]);
 
   useEffect(() => {
     fetch("./instructorData.json")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
-        setAllInstructor(data);
+        setAllInstructors(data);
       });
   }, []);
   return (
-    <InstructorContext.Provider value={{ allInstructor }}>
+    <InstructorContext.Provider value={{ allInstructors }}>
       {children}
     </InstructorContext.Provider>
   );

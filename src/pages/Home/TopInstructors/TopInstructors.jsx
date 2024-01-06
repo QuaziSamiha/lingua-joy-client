@@ -1,24 +1,20 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import InstructorCard from "../InstructorCard/InstructorCard";
 import { Link } from "react-router-dom";
-// import { FaArrowRight } from "react-icons/fa";
+import { InstructorContext } from "../../../providers/InstructorContext/InstructorContext";
 
 const TopInstructors = () => {
   const [topInstructors, setTopInstructors] = useState([]);
+  const { allInstructors } = useContext(InstructorContext);
 
   useEffect(() => {
-    fetch(`./instructorData.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        const sortedInstructors = data.sort(
-          (a, b) => b.totalStudent - a.totalStudent
-        );
-        const top6Instructors = sortedInstructors.slice(0, 6);
-        setTopInstructors(top6Instructors);
-      });
-  }, []);
+    const sortedInstructors = allInstructors.sort(
+      (a, b) => b.totalStudent - a.totalStudent
+    );
+    const top6Instructors = sortedInstructors.slice(0, 6);
+    setTopInstructors(top6Instructors);
+  }, [allInstructors]);
 
   // console.log(topInstructors);
 
@@ -51,7 +47,6 @@ const TopInstructors = () => {
             className="text-lg font-bold text-[#703e78] flex items-center"
           >
             All Instructors
-            {/* <FaArrowRight className="ml-2 mt-1"/> */}
           </Link>
         </div>
       </div>

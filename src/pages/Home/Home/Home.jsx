@@ -6,13 +6,6 @@ function Home() {
   return (
     <>
       {/* <Banner /> */}
-      {/* <button className="btn btn-primary">Primary</button> */}
-      <TopInstructors />
-      <TopInstructors />
-      <TopInstructors />
-      <TopInstructors />
-      <TopInstructors />
-      <TopInstructors />
       <TopInstructors />
     </>
   );

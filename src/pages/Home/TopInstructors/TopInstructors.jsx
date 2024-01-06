@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import InstructorCard from "../InstructorCard/InstructorCard";
+import { Link } from "react-router-dom";
+// import { FaArrowRight } from "react-icons/fa";
 
 const TopInstructors = () => {
   const [topInstructors, setTopInstructors] = useState([]);
@@ -38,6 +40,21 @@ const TopInstructors = () => {
           />
         ))}
       </section>
+      <div className="flex justify-center items-center">
+        <div
+          className="border border-[#703e78] px-6 py-3 rounded hover:bg-base-200"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <Link
+            to="/instructors"
+            className="text-lg font-bold text-[#703e78] flex items-center"
+          >
+            All Instructors
+            {/* <FaArrowRight className="ml-2 mt-1"/> */}
+          </Link>
+        </div>
+      </div>
     </section>
   );
 };

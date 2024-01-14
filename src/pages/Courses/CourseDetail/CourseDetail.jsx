@@ -4,7 +4,6 @@ import CourseOutline from "./CourseOutline";
 import { FaHeartCircleCheck } from "react-icons/fa6";
 import CoursePrerequisite from "./CoursePrerequisite";
 import CourseReward from "./CourseReward";
-import Reviews from "./Reviews";
 import QuestionAnswer from "./QuestionAnswer";
 
 const CourseDetail = () => {
@@ -56,7 +55,6 @@ const CourseDetail = () => {
             <div>
               <CoursePrerequisite />
               <CourseReward />
-              <Reviews />
               <QuestionAnswer />
             </div>
           </div>

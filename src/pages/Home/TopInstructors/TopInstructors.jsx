@@ -19,7 +19,7 @@ const TopInstructors = () => {
   // console.log(topInstructors);
 
   return (
-    <section className="my-16">
+    <section className="my-24 py-8 bg-[#fafafa]">
       <div>
         <h1 className="uppercase text-center text-[#703e78] text-2xl font-bold mb-4">
           Star Instructors

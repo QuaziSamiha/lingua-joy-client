@@ -13,7 +13,7 @@ const QuestionAnswer = () => {
                 Is the course self-paced or instructor-led?
               </div>
               <div className="collapse-content">
-                <p>
+                <p className="text-sm">
                   The course is instructor-led, providing a structured learning
                   experience with guidance and support.
                 </p>
@@ -25,7 +25,7 @@ const QuestionAnswer = () => {
                 What kind of support is available for students during the
                 course?
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content text-sm">
                 <p>
                   Students have access to a dedicated support team and regular
                   Q&A sessions with instructors to address any queries or
@@ -40,7 +40,7 @@ const QuestionAnswer = () => {
                 activities?{" "}
               </div>
               <div className="collapse-content">
-                <p>
+                <p className="text-sm">
                   Yes, the course includes interactive learning elements and
                   group activities to enhance engagement and collaboration among
                   students.{" "}

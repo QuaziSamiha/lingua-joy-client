@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "course/:id",
+        // TODO: WILL BE PRIVATE ROUTE
         element: <CourseDetail />,
         // load from backend
       },

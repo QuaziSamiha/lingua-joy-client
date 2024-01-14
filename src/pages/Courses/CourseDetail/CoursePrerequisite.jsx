@@ -35,22 +35,22 @@ const CoursePrerequisite = () => {
   return (
     <>
       <section
-        className="my-8 bg-[#ba68c8] w-full "
+        className="my-8 bg-[#fafafa] w-full "
         data-aos="fade-up-right"
         data-aos-duration="3000" // Animation duration in milliseconds
       >
         <h1
-          className="text-[#fafafa] font-bold text-2xl text-center"
+          className="text-[#703e78] font-bold text-2xl text-center"
           data-aos="fade-up-right"
           data-aos-duration="3000"
         >
           Before You Begin
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  py-8 px-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  py-8">
           {requirements.map((requirement, index) => (
             <div key={index} className="">
               <div
-                className="bg-[#dcb3e4] h-28 rounded-lg shadow-lg shadow-[#703e78]"
+                className="bg-[#fafafa] text-[#703e78] h-28 rounded-lg shadow-lg shadow-[#dcb3e4]"
                 data-aos="fade-up-right"
                 data-aos-duration="3000"
               >

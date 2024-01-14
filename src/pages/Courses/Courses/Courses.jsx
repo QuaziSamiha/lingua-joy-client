@@ -1,34 +1,44 @@
-import Banner from "../../../components/Banner/Banner";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
+import Banner from "../../../components/Shared/Banner/Banner";
+import SearchBar from "../../../components/Shared/SearchBar/SearchBar";
 import useCourse from "../../../hooks/useCourse";
+import CourseCard from "../CourseCard/CourseCard";
 
 function Courses() {
+  const [approvedCourses, setApprovedCourses] = useState([]);
   const [courses, refetch, isPending, isLoading, isError] = useCourse();
-  console.log(courses);
+  // console.log(courses);
+  // console.log(isLoading);
+
+  useEffect(() => {
+    const filteredCourses = courses.filter(
+      (course) => course.courseStatus === "approved"
+    );
+
+    setApprovedCourses(filteredCourses);
+  }, [courses]);
+
+  if (isLoading) {
+    return <span className="loading loading-spinner text-[#ba68c8]"></span>;
+  }
+
+  // console.log(approvedCourses);
+
   return (
     <>
       <Banner />
-      <section className="border border-red-600 w-[1180px] mx-auto my-24">
+      <section className="w-[1180px] mx-auto my-16">
         <div className="flex justify-center my-8">
-          <div className="">
-            <div className="join">
-              <div>
-                <div>
-                  <input
-                    className="input input-bordered join-item w-[500px]"
-                    placeholder="Search by Language..........."
-                  />
-                </div>
-              </div>
-              <div className="indicator">
-                <span className="indicator-item badge badge-secondary">
-                  new
-                </span>
-                <button className="btn join-item bg-[#ba68c8] text-white w-[100px] text-lg">
-                  Search
-                </button>
-              </div>
-            </div>
-          </div>
+          <SearchBar />
+        </div>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-24">
+          {approvedCourses.map((course, index) => (
+            <CourseCard key={index} course={course} />
+          ))}
+        </section>
+        <div>
+          {/* TODO: PAGINATION */}
         </div>
       </section>
     </>

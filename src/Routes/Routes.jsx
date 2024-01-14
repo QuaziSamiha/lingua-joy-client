@@ -8,6 +8,7 @@ import Courses from "../pages/Courses/Courses/Courses";
 import SignIn from "../pages/SignIn/SignIn";
 import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import SignUp from "../pages/SignUp/SignUp";
+import CourseDetail from "../pages/Courses/CourseDetail/CourseDetail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: "courses",
         element: <Courses />,
+      },
+      {
+        path: "course/:id",
+        element: <CourseDetail />,
+        // load from backend
       },
       {
         path: "dashboard",

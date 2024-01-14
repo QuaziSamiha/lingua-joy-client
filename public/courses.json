@@ -1,5 +1,6 @@
 [
   {
+    "courseId": "1",
     "className": "English Learning Class",
     "image": "https://ibb.co/jWfHKpP",
     "instructorName": "John Smith",
@@ -13,6 +14,7 @@
     "daysOfWeek": ["Tuesday", "Thursday", "Saturday"]
   },
   {
+    "courseId": "2",
     "className": "German Learning Class",
     "image": "https://ibb.co/T4QTj7J",
     "instructorName": "Anna Müller",
@@ -23,9 +25,10 @@
     "totalSeat": 15,
     "courseDuration": 8,
     "time": "3:00 pm - 4:00 pm",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "3",
     "className": "French Learning Class",
     "image": "https://ibb.co/YbGxRGc",
     "instructorName": "Sophie Dubois",
@@ -36,9 +39,10 @@
     "totalSeat": 10,
     "courseDuration": 5,
     "time": "6:00 pm - 7:00 pm",
-    "daysOfWeek": ["Wednesday", "Friday"]
+    "daysOfWeek": ["Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "4",
     "className": "Spanish Learning Class",
     "image": "https://ibb.co/BjXzHJN",
     "instructorName": "Maria Rodriguez",
@@ -49,9 +53,10 @@
     "totalSeat": 25,
     "courseDuration": 7,
     "time": "10:00 am - 11:00 am",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "5",
     "className": "Chinese Learning Class",
     "image": "https://ibb.co/D9Pkxf1",
     "instructorName": "Li Wei",
@@ -65,6 +70,7 @@
     "daysOfWeek": ["Tuesday", "Thursday"]
   },
   {
+    "courseId": "6",
     "className": "Japanese Learning Class",
     "image": "https://ibb.co/fQs9TnB",
     "instructorName": "Takashi Yamamoto",
@@ -75,9 +81,10 @@
     "totalSeat": 15,
     "courseDuration": 8,
     "time": "5:30 pm - 6:30 pm",
-    "daysOfWeek": ["Wednesday", "Friday"]
+    "daysOfWeek": ["Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "7",
     "className": "Italian Learning Class",
     "image": "https://ibb.co/WpGyrbc",
     "instructorName": "Giovanni Russo",
@@ -91,6 +98,7 @@
     "daysOfWeek": ["Tuesday", "Thursday", "Saturday"]
   },
   {
+    "courseId": "8",
     "className": "Russian Learning Class",
     "image": "https://ibb.co/pLMLVXv",
     "instructorName": "Natalia Ivanova",
@@ -101,9 +109,10 @@
     "totalSeat": 15,
     "courseDuration": 7,
     "time": "3:30 pm - 4:30 pm",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "9",
     "className": "Arabic Learning Class",
     "image": "https://ibb.co/ZhfZrt3",
     "instructorName": "Ahmed Hassan",
@@ -117,6 +126,7 @@
     "daysOfWeek": ["Wednesday", "Saturday"]
   },
   {
+    "courseId": "10",
     "className": "Portuguese Learning Class",
     "image": "https://ibb.co/8Nm4CvR",
     "instructorName": "Ana Silva",
@@ -127,9 +137,10 @@
     "totalSeat": 18,
     "courseDuration": 6,
     "time": "10:30 am - 11:30 am",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "24",
     "className": "Korean Learning Class",
     "image": "https://ibb.co/D8Ksbw7",
     "instructorName": "Ji-Hoon Kim",
@@ -143,6 +154,7 @@
     "daysOfWeek": ["Tuesday", "Thursday"]
   },
   {
+    "courseId": "11",
     "className": "Swedish Learning Class",
     "image": "https://ibb.co/HDmvL1H",
     "instructorName": "Eva Lindström",
@@ -156,6 +168,7 @@
     "daysOfWeek": ["Thursday", "Saturday"]
   },
   {
+    "courseId": "12",
     "className": "Dutch Learning Class",
     "image": "https://ibb.co/RHZH1FQ",
     "instructorName": "Pieter van den Berg",
@@ -169,6 +182,7 @@
     "daysOfWeek": ["Tuesday", "Thursday", "Saturday"]
   },
   {
+    "courseId": "13",
     "className": "Turkish Learning Class",
     "image": "https://ibb.co/q06fRFp",
     "instructorName": "Ayse Yilmaz",
@@ -179,9 +193,10 @@
     "totalSeat": 20,
     "courseDuration": 7,
     "time": "4:00 pm - 5:00 pm",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "14",
     "className": "Hindi Learning Class",
     "image": "https://ibb.co/28V3fM1",
     "instructorName": "Raj Kapoor",
@@ -192,9 +207,10 @@
     "totalSeat": 12,
     "courseDuration": 5,
     "time": "5:00 pm - 6:00 pm",
-    "daysOfWeek": ["Wednesday", "Friday"]
+    "daysOfWeek": ["Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "15",
     "className": "Greek Learning Class",
     "image": "https://ibb.co/6t05DgY",
     "instructorName": "Elena Papadopoulos",
@@ -208,6 +224,7 @@
     "daysOfWeek": ["Tuesday", "Thursday", "Saturday"]
   },
   {
+    "courseId": "16",
     "className": "Polish Learning Class",
     "image": "https://ibb.co/28YhQXt",
     "instructorName": "Michal Nowak",
@@ -218,9 +235,10 @@
     "totalSeat": 15,
     "courseDuration": 7,
     "time": "3:30 pm - 4:30 pm",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "17",
     "className": "Vietnamese Learning Class",
     "image": "https://ibb.co/nrg3dYd",
     "instructorName": "Linh Nguyen",
@@ -234,6 +252,7 @@
     "daysOfWeek": ["Wednesday", "Saturday"]
   },
   {
+    "courseId": "18",
     "className": "Swahili Learning Class",
     "image": "https://ibb.co/MVncPVC",
     "instructorName": "Juma Mbele",
@@ -244,9 +263,10 @@
     "totalSeat": 18,
     "courseDuration": 6,
     "time": "11:00 am - 12:00 pm",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "19",
     "className": "Hebrew Learning Class",
     "image": "https://ibb.co/QjMH2vK",
     "instructorName": "Yael Cohen",
@@ -260,6 +280,7 @@
     "daysOfWeek": ["Tuesday", "Thursday"]
   },
   {
+    "courseId": "20",
     "className": "Finnish Learning Class",
     "image": "https://ibb.co/cwdS7HC",
     "instructorName": "Mikko Virtanen",
@@ -273,6 +294,7 @@
     "daysOfWeek": ["Thursday", "Saturday"]
   },
   {
+    "courseId": "21",
     "className": "Bengali Learning Class",
     "image": "https://ibb.co/3srqbBs",
     "instructorName": "Ananya Das",
@@ -286,6 +308,7 @@
     "daysOfWeek": ["Tuesday", "Thursday", "Saturday"]
   },
   {
+    "courseId": "22",
     "className": "Czech Learning Class",
     "image": "https://ibb.co/3srqbBs",
     "instructorName": "Petr Novak",
@@ -296,9 +319,10 @@
     "totalSeat": 15,
     "courseDuration": 7,
     "time": "3:30 pm - 4:30 pm",
-    "daysOfWeek": ["Monday", "Wednesday", "Friday"]
+    "daysOfWeek": ["Monday", "Wednesday", "FrcourseIday"]
   },
   {
+    "courseId": "23",
     "className": "Tagalog Learning Class",
     "image": "https://ibb.co/6t05DgY",
     "instructorName": "Maria Santos",

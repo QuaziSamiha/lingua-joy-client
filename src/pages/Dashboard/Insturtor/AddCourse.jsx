@@ -11,44 +11,89 @@ const AddCourse = () => {
   return (
     <>
       <section className="w-full">
-        <div className="mx-24">
-          <h1 className="uppercase py-4 text-center text-3xl text-[#703e78] font-bold leading-3">
-            add course
-          </h1>
-
+        <h1 className="uppercase py-4 text-center text-3xl text-[#703e78] font-bold leading-3">
+          add course
+        </h1>
+        <div className="mx-32 border rounded-lg shadow-lg shadow-[#fafafa] p-2">
           <div className="w-full">
             <form onSubmit={handleSubmit(onSubmit)} className="m-2">
-              <div className="form-control my-2">
-                <label className="label">
-                  <span className="label-text font-semibold">
-                    Course Name: <span className="text-red-600">*</span>
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="course name..."
-                  className="outline-none  border p-2 rounded ml-1"
-                  {...register("courseName", { required: true })}
-                />
-                {errors.courseName && (
-                  <p className="text-xs text-red-500">This field is required</p>
-                )}
+              <div className="flex justify-evenly">
+                <div className="form-control my-2 mr-2 w-1/2">
+                  <label className="label">
+                    <span className="label-text font-semibold">
+                      Course Name: <span className="text-red-600">*</span>
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="course name..."
+                    className="outline-none  border p-2 rounded ml-1"
+                    {...register("courseName", { required: true })}
+                  />
+                  {errors.courseName && (
+                    <p className="text-xs text-red-500">
+                      This field is required
+                    </p>
+                  )}
+                </div>
+                <div className="form-control my-2 ml-2 w-1/2">
+                  <label className="label">
+                    <span className="label-text font-semibold">
+                      Course Image: <span className="text-red-600">*</span>
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="course image . . ."
+                    className="outline-none border p-2 rounded ml-1"
+                    {...register("courseImage", { required: true })}
+                  />
+                  {errors.courseImage && (
+                    <p className="text-xs text-red-500">
+                      This field is required
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="form-control my-2">
-                <label className="label">
-                  <span className="label-text font-semibold">
-                    Course Image: <span className="text-red-600">*</span>
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="course image . . ."
-                  className="outline-none  border p-2 rounded ml-1"
-                  {...register("courseImage", { required: true })}
-                />
-                {errors.courseImage && (
-                  <p className="text-xs text-red-500">This field is required</p>
-                )}
+              <div className="flex justify-evenly">
+                <div className="form-control my-2 mr-2 w-1/2">
+                  <label className="label">
+                    <span className="label-text font-semibold">
+                      Course Time: <span className="text-red-600">*</span>
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    value={"9:00 am - 11:00 am"}
+                    placeholder="course time..."
+                    className="outline-none  border p-2 rounded ml-1"
+                    {...register("courseTime", { required: true })}
+                  />
+                  {errors.courseTime && (
+                    <p className="text-xs text-red-500">
+                      This field is required
+                    </p>
+                  )}
+                </div>
+                <div className="form-control my-2 ml-2 w-1/2">
+                  <label className="label">
+                    <span className="label-text font-semibold">
+                      Course Day: <span className="text-red-600">*</span>
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="course day . . ."
+                    value={"Thursday, Sunday, Tuesday"}
+                    className="outline-none border p-2 rounded ml-1"
+                    {...register("courseDay", { required: true })}
+                  />
+                  {errors.courseDay && (
+                    <p className="text-xs text-red-500">
+                      This field is required
+                    </p>
+                  )}
+                </div>
               </div>
               <div className="flex justify-evenly">
                 <div className="form-control my-2 mr-2 w-1/2">
@@ -110,6 +155,26 @@ const AddCourse = () => {
                 <div className="form-control my-2 ml-2 w-1/2">
                   <label className="label">
                     <span className="label-text font-semibold">
+                      Total Students: <span className="text-red-600">*</span>
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    value={0}
+                    className="outline-none  border p-2 rounded ml-1"
+                    {...register("totalStudent", { required: true })}
+                  />
+                  {errors.totalStudent && (
+                    <p className="text-xs text-red-500">
+                      This field is required
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="flex justify-evenly">
+                <div className="form-control my-2 mr-2 w-1/2">
+                  <label className="label">
+                    <span className="label-text font-semibold">
                       Price: <span className="text-red-600">*</span>
                     </span>
                   </label>
@@ -125,9 +190,8 @@ const AddCourse = () => {
                     </p>
                   )}
                 </div>
-              </div>
-              <div className="flex justify-start">
-                <div className="form-control my-2 mr-2 w-1/2">
+
+                <div className="form-control my-2 ml-2 w-1/2">
                   <label className="label">
                     <span className="label-text font-semibold">
                       Course Status: <span className="text-red-600">*</span>

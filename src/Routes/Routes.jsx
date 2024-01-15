@@ -13,6 +13,7 @@ import PaymentHistory from "../pages/Dashboard/Learner/PaymentHistory";
 import SelectedCourse from "../pages/Dashboard/Learner/SelectedCourse";
 import MakePayment from "../pages/Dashboard/Learner/MakePayment";
 import EnrolledCourse from "../pages/Dashboard/Learner/EnrolledCourse";
+import AddCourse from "../pages/Dashboard/Insturtor/AddCourse";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: <Dashboard />,
     children: [
+      {
+        path: "addcourse",
+        element: <AddCourse />,
+      },
+      // --------------FOR LEARNER-----------------------
       {
         path: "selectedcourses",
         element: <SelectedCourse />,

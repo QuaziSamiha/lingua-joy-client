@@ -62,7 +62,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/dashboard/addcourse'>
                 <MdAddchart className="w-4 h-4" />
                 Add Course
               </Link>

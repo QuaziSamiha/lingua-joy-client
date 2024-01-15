@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import img from "../../../assets/images/courseImages/2.jpg";
+import { FaArrowRight } from "react-icons/fa";
+
 const CourseCard = ({ topCourse }) => {
   const {
     courseId,
@@ -24,16 +26,20 @@ const CourseCard = ({ topCourse }) => {
           <div>
             <img src={img} className="h-24 w-24 my-2 mx-4 rounded-lg" alt="" />
           </div>
-          <div className="my-2 mx-2 w-1/2">
-            <h1 className="text-[#703e78] font-bold text-lg mb-1">{className}</h1>
-            <p className="text-[#703e78] font-medium">{}</p>
-            <div className="flex justify-end items-center">
+          <div className="m-2 w-2/3 h-24">
+            <h1 className="text-[#703e78] font-semibold text-md mb-1">
+              {className}
+            </h1>
+            <p className="text-[#703e78] font-medium text-sm">
+              By {instructorName}
+            </p>
+            <div className="flex justify-end items-end">
               <div
-                className="rounded-full bg-[#ba68c8] p-3 hover:tooltip hover:tooltip-open hover:tooltip-bottom"
+                className="rounded-full bg-[#ba68c8] p-2 hover:tooltip hover:tooltip-open hover:tooltip-bottom"
                 data-tip="Details"
               >
-                <Link to={`/course/:${courseId}`} className="">
-                  {/* <FaArrowRight className="text-white" /> */}
+                <Link to={`/course/${courseId}`} className="">
+                  <FaArrowRight className="text-white h-3 w-3" />
                 </Link>
               </div>
             </div>

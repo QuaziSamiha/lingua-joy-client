@@ -6,9 +6,9 @@ import AboutUs from "../pages/AboutUs/AboutUs/AboutUs";
 import Instructors from "../pages/Instructors/Instructors/Instructors";
 import Courses from "../pages/Courses/Courses/Courses";
 import SignIn from "../pages/SignIn/SignIn";
-import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import SignUp from "../pages/SignUp/SignUp";
 import CourseDetail from "../pages/Courses/CourseDetail/CourseDetail";
+import Dashboard from "../Layouts/Dashboard";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,10 +38,6 @@ const router = createBrowserRouter([
         // load from backend
       },
       {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
-      {
         path: "signin",
         element: <SignIn />,
       },
@@ -50,6 +46,11 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
     ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard />,
+    children: [],
   },
 ]);
 

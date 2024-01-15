@@ -42,7 +42,7 @@ const NavigationBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {routes.map((route, index) => (
-                <li key={index} className="px-4">
+                <li key={index} className="px-4 uppercase">
                   <Link to={route.id}>{route.name}</Link>
                 </li>
               ))}
@@ -57,7 +57,7 @@ const NavigationBar = () => {
             {routes.map((route, index) => (
               <li key={index} className="px-1 text-white font-medium">
                 <Link
-                  className="hover:shadow-lg shadow-[#703e78]"
+                  className="hover:shadow-lg shadow-[#703e78] uppercase"
                   to={route.id}
                 >
                   {route.name}

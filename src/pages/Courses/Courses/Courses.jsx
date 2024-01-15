@@ -15,7 +15,7 @@ function Courses() {
     const filteredCourses = courses.filter(
       (course) => course.courseStatus === "approved"
     );
-
+    // refetch();
     setApprovedCourses(filteredCourses);
   }, [courses]);
 
@@ -37,9 +37,7 @@ function Courses() {
             <CourseCard key={index} course={course} />
           ))}
         </section>
-        <div>
-          {/* TODO: PAGINATION */}
-        </div>
+        <div>{/* TODO: PAGINATION */}</div>
       </section>
     </>
   );

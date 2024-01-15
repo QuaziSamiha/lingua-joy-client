@@ -4,21 +4,34 @@ import img from "../../../assets/images/courseImages/10.jpg";
 
 const CourseCard = ({ course }) => {
   //   console.log(course);
-  const { courseId, image, className, instructorName, totalStudent, totalSeat, price } =
-    course;
+  const {
+    courseId,
+    image,
+    className,
+    instructorName,
+    totalStudent,
+    totalSeat,
+    price,
+  } = course;
   //   console.log(image);
   const availableSeat = totalSeat - totalStudent;
   //   console.log(availableSeat)
 
-//   const handleCourseDetail = () => {}
-
   return (
     <div data-aos="fade-up" data-aos-duration="2000">
-      <div className="bg-[#fafafa] rounded-lg shadow-lg">
+      <div
+        className={`${
+          availableSeat === 0 ? "bg-red-600" : "bg-[#fafafa]"
+        } rounded-lg shadow-lg`}
+      >
         <div className="flex justify-center ">
           <img src={img} alt="" className="w-full m-6 rounded-md h-48" />
         </div>
-        <div className="mx-6 text-[#703e78]">
+        <div
+          className={`mx-6 ${
+            availableSeat === 0 ? "text-white" : "text-[#703e78]"
+          }`}
+        >
           <p className=" text-xl mb-1 font-bold leading-relaxed">{className}</p>
           <p className="mb-1">
             Conducted by{" "}
@@ -31,7 +44,11 @@ const CourseCard = ({ course }) => {
         </div>
         <div className="mx-6 text-white text-center">
           <Link to={`/course/${courseId}`}>
-            <button className="w-full bg-[#ba68c8] my-4 py-2 rounded-md hover:bg-[#703e78]">
+            <button
+              className={`w-full  my-4 py-2 rounded-md ${
+                availableSeat === 0 ? "bg-white text-red-800 hover:bg-[#fafafa]" : "bg-[#ba68c8] text-white hover:bg-[#703e78]"
+              }`}
+            >
               Details
             </button>
           </Link>

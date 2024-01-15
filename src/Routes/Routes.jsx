@@ -14,6 +14,7 @@ import SelectedCourse from "../pages/Dashboard/Learner/SelectedCourse";
 import MakePayment from "../pages/Dashboard/Learner/MakePayment";
 import EnrolledCourse from "../pages/Dashboard/Learner/EnrolledCourse";
 import AddCourse from "../pages/Dashboard/Insturtor/AddCourse";
+import MyCourses from "../pages/Dashboard/Insturtor/MyCourses";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "addcourse",
         element: <AddCourse />,
+      },
+      {
+        path: 'mycourses',
+        element: <MyCourses />
       },
       // --------------FOR LEARNER-----------------------
       {

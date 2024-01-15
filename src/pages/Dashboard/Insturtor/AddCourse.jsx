@@ -18,7 +18,7 @@ const AddCourse = () => {
           <div className="w-full">
             <form onSubmit={handleSubmit(onSubmit)} className="m-2">
               <div className="flex justify-evenly">
-                <div className="form-control my-2 mr-2 w-1/2">
+                <div className="form-control mb-2 mr-2 w-1/2">
                   <label className="label">
                     <span className="label-text font-semibold">
                       Course Name: <span className="text-red-600">*</span>
@@ -36,7 +36,7 @@ const AddCourse = () => {
                     </p>
                   )}
                 </div>
-                <div className="form-control my-2 ml-2 w-1/2">
+                <div className="form-control mb-2 ml-2 w-1/2">
                   <label className="label">
                     <span className="label-text font-semibold">
                       Course Image: <span className="text-red-600">*</span>

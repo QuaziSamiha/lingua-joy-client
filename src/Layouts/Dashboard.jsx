@@ -68,7 +68,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/dashboard/mycourses'>
                 <FaClipboardList className="w-4 h-4" />
                 My courses
               </Link>

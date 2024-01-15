@@ -9,6 +9,9 @@ import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import CourseDetail from "../pages/Courses/CourseDetail/CourseDetail";
 import Dashboard from "../Layouts/Dashboard";
+import PaymentHistory from "../pages/Dashboard/Learner/PaymentHistory";
+import SelectedCourse from "../pages/Dashboard/Learner/SelectedCourse";
+import MakePayment from "../pages/Dashboard/Learner/MakePayment";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,7 +53,20 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <Dashboard />,
-    children: [],
+    children: [
+      {
+        path: "selectedcourses",
+        element: <SelectedCourse />,
+      },
+      {
+        path: "payment/:id",
+        element: <MakePayment />,
+      },
+      {
+        path: "paymenthistory",
+        element: <PaymentHistory />,
+      },
+    ],
   },
 ]);
 

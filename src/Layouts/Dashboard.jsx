@@ -6,6 +6,7 @@ import { IoSettings } from "react-icons/io5";
 import { SiBookstack } from "react-icons/si";
 import { FaClipboardList } from "react-icons/fa";
 import { FaUsersCog } from "react-icons/fa";
+import { FaFileInvoiceDollar } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -38,20 +39,20 @@ const Dashboard = () => {
             {/* -----------------------for an admin---------------------------- */}
             <li>
               <Link to="/dashboard/home">
-                <FaHome className="w-4 h-4"/>
+                <FaHome className="w-4 h-4" />
                 Admin Home
               </Link>
             </li>
             <li>
               <Link>
-                <IoSettings className="w-4 h-4"/>
+                <IoSettings className="w-4 h-4" />
                 Manage Courses
               </Link>
             </li>
             <li>
               <Link>
-                <FaUsersCog className="w-4 h-4"/>
-                Mange Users
+                <FaUsersCog className="w-4 h-4" />
+                Manage Users
               </Link>
             </li>
             {/* for a instructor */}
@@ -81,7 +82,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/dashboard/selectedcourses'>
                 <FaListCheck className="w-4 h-4" />
                 Selected Courses
               </Link>
@@ -90,6 +91,13 @@ const Dashboard = () => {
               <Link>
                 <MdFormatListBulletedAdd className="w-4 h-4" />
                 Enrolled Courses
+              </Link>
+            </li>
+            <li>
+              <Link to='/dashboard/paymenthistory'>
+                {" "}
+                <FaFileInvoiceDollar className="w-4 h-4"/>
+                payment history
               </Link>
             </li>
             <div className="divider divider-neutral"></div>

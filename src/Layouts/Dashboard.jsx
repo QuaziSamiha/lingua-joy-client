@@ -88,7 +88,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/dashboard/enrolledcourses'>
                 <MdFormatListBulletedAdd className="w-4 h-4" />
                 Enrolled Courses
               </Link>

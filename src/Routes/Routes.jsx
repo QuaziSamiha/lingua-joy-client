@@ -12,6 +12,7 @@ import Dashboard from "../Layouts/Dashboard";
 import PaymentHistory from "../pages/Dashboard/Learner/PaymentHistory";
 import SelectedCourse from "../pages/Dashboard/Learner/SelectedCourse";
 import MakePayment from "../pages/Dashboard/Learner/MakePayment";
+import EnrolledCourse from "../pages/Dashboard/Learner/EnrolledCourse";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "paymenthistory",
         element: <PaymentHistory />,
+      },
+      {
+        path: "enrolledcourses",
+        element: <EnrolledCourse />,
       },
     ],
   },

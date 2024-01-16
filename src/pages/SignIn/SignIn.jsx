@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import image from "../../assets/images/others/sign-in.png";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { FaEyeSlash } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa";
+import { useState } from "react";
 
 const SignIn = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -31,9 +35,13 @@ const SignIn = () => {
                   type="email"
                   placeholder="Your Email"
                   className="border-b outline-none border-[#37474f] w-full pl-1"
-                  {...register("email", {required: true})}
+                  {...register("email", { required: true })}
                 />
-                {errors.email && <span className="text-red-600 text-xs font-medium">Email is required</span>}
+                {errors.email && (
+                  <span className="text-red-600 text-xs font-medium">
+                    Email is required
+                  </span>
+                )}
               </div>
               <div className="my-3">
                 <label className="label">
@@ -41,13 +49,28 @@ const SignIn = () => {
                     Password
                   </span>
                 </label>
-                <input
-                  type="password"
-                  placeholder="Your Password"
-                  className="border-b outline-none border-[#37474f] w-full pl-1"
-                  {...register("password", { required: true })}
-                />
-                {errors.password && <span className="text-red-600 text-xs font-medium">Password is required</span>}
+                <div className="flex justify-between border-[#37474f] w-full border-b">
+                  <input
+                    type={`${showPassword ? "text" : "password"}`}
+                    placeholder="Your Password"
+                    className=" outline-none  pl-1"
+                    {...register("password", { required: true })}
+                  />{" "}
+                  {showPassword ? (
+                    <button type="button" onClick={() => setShowPassword(false)}>
+                      <FaEye className="text-[#9cb7d8] mt-2 mr-2" />
+                    </button>
+                  ) : (
+                    <button type="button" onClick={() => setShowPassword(true)}>
+                      <FaEyeSlash className="text-[#9cb7d8] mt-2 mr-2" />
+                    </button>
+                  )}
+                </div>
+                {errors.password && (
+                  <span className="text-red-600 text-xs font-medium">
+                    Password is required
+                  </span>
+                )}
               </div>
               <div className="my-8">
                 <input
@@ -68,12 +91,15 @@ const SignIn = () => {
               <div className="m-6">
                 <button className="btn btn-block bg-base-300 rounded-none text-lg font-semibold">
                   Sing In with Google
-                  <FcGoogle className="w-8 h-8"/>
+                  <FcGoogle className="w-8 h-8" />
                 </button>
               </div>
             </div>
             <div className="text-center text-sm my-8 text-[#37474f]  font-semibold">
-              New to LinguaJoy? <Link to='/signup' className="text-[#703e78] font-bold">Sign Up</Link>
+              New to LinguaJoy?{" "}
+              <Link to="/signup" className="text-[#703e78] font-bold">
+                Sign Up
+              </Link>
             </div>
           </div>
           <div className="w-[500px] h-[500px]">

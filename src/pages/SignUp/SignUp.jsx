@@ -13,13 +13,16 @@ const SignUp = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <>
-      <section className="my-16">
+      <section className="mt-16 mb-28 font-Outfit">
         <div className="flex justify-around items-center">
-          <div className="w-[500px] h-[530px]">
+          <div className="w-[500px] h-[600px]">
             <h1 className="text-center font-bold text-3xl uppercase text-[#37474f]">
               Sign up
             </h1>
-            <form onSubmit={handleSubmit(onSubmit)} className="m-6">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="m-6 tracking-wider"
+            >
               <div className="my-3">
                 <label className="label">
                   <span className="label-text font-semibold text-[#37474f] text-lg">
@@ -59,6 +62,24 @@ const SignUp = () => {
               <div className="my-3">
                 <label className="label">
                   <span className="label-text font-semibold text-[#37474f] text-lg">
+                    Photo URL
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Upload Your Photo"
+                  className="border-b outline-none border-[#37474f] w-full pl-1"
+                  {...register("photo", { required: true })}
+                />
+                {errors.photo && (
+                  <span className="text-red-600 text-xs font-medium">
+                    Photo is required
+                  </span>
+                )}
+              </div>
+              <div className="my-3">
+                <label className="label">
+                  <span className="label-text font-semibold text-[#37474f] text-lg">
                     Password
                   </span>
                 </label>
@@ -66,11 +87,11 @@ const SignUp = () => {
                   type="password"
                   placeholder="Your Password"
                   className="border-b outline-none border-[#37474f] w-full pl-1"
-                  {...register("password", { required: true })}
+                  {...register("password", { required: true, minLength: 6 })}
                 />
                 {errors.password && (
                   <span className="text-red-600 text-xs font-medium">
-                    Password is required
+                    Password is required. Please provide minimum 6 characters
                   </span>
                 )}
               </div>
@@ -78,7 +99,7 @@ const SignUp = () => {
                 <input
                   type="submit"
                   value="Sign Up"
-                  className="btn btn-block hover:skeleton hover:rounded-none bg-[#ba68c8] hover:bg-[#ba68c8] text-white hover:text-white text-lg rounded-none text-white]"
+                  className="font-light btn btn-block hover:skeleton hover:rounded-none bg-[#ba68c8] hover:bg-[#ba68c8] text-white hover:text-white text-lg rounded-none text-white]"
                 />
               </div>
             </form>

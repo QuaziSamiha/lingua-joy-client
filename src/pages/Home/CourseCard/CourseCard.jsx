@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img from "../../../assets/images/courseImages/2.jpg";
+// import img from "../../../assets/images/courseImages/2.jpg";
 import { FaArrowRight } from "react-icons/fa";
 
 const CourseCard = ({ topCourse }) => {
@@ -8,12 +8,12 @@ const CourseCard = ({ topCourse }) => {
     image,
     className,
     instructorName,
-    totalStudent,
-    totalSeat,
-    price,
+    // totalStudent,
+    // totalSeat,
+    // price,
   } = topCourse;
   //   console.log(image);
-  const availableSeat = totalSeat - totalStudent;
+  // const availableSeat = totalSeat - totalStudent;
 
   return (
     <>
@@ -24,7 +24,7 @@ const CourseCard = ({ topCourse }) => {
       >
         <div className="flex">
           <div>
-            <img src={img} className="h-24 w-24 my-2 mx-4 rounded-lg" alt="" />
+            <img src={image} className="h-24 w-24 my-2 mx-4 rounded-lg" alt="" />
           </div>
           <div className="m-2 w-2/3 h-24">
             <h1 className="text-[#703e78] font-semibold text-md mb-1">

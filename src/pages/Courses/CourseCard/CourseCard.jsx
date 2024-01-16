@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-import img from "../../../assets/images/courseImages/10.jpg";
 
 const CourseCard = ({ course }) => {
   //   console.log(course);
@@ -25,7 +23,7 @@ const CourseCard = ({ course }) => {
         } rounded-lg shadow-lg`}
       >
         <div className="flex justify-center ">
-          <img src={img} alt="" className="w-full m-6 rounded-md h-48" />
+          <img src={image} alt="" className="w-full m-6 rounded-md h-48" />
         </div>
         <div
           className={`mx-6 ${
@@ -46,7 +44,9 @@ const CourseCard = ({ course }) => {
           <Link to={`/course/${courseId}`}>
             <button
               className={`w-full  my-4 py-2 rounded-md ${
-                availableSeat === 0 ? "bg-white text-red-800 hover:bg-[#fafafa]" : "bg-[#ba68c8] text-white hover:bg-[#703e78]"
+                availableSeat === 0
+                  ? "bg-white text-red-800 hover:bg-[#fafafa]"
+                  : "bg-[#ba68c8] text-white hover:bg-[#703e78]"
               }`}
             >
               Details

@@ -2,7 +2,7 @@
   {
     "courseId": "1",
     "className": "English Learning Class",
-    "image": "https://ibb.co/jWfHKpP",
+    "image": "https://i.ibb.co/tBmZjvj/27.webp",
     "instructorName": "John Smith",
     "instructorEmail": "john.smith@email.com",
     "price": 49.99,
@@ -16,7 +16,8 @@
   {
     "courseId": "2",
     "className": "German Learning Class",
-    "image": "https://ibb.co/T4QTj7J",
+    "image2": "https://ibb.co/T4QTj7J",
+    "image": "https://i.ibb.co/Phxc1h6/26.jpg",
     "instructorName": "Anna Müller",
     "instructorEmail": "anna.muller@email.com",
     "price": 59.99,
@@ -30,7 +31,8 @@
   {
     "courseId": "3",
     "className": "French Learning Class",
-    "image": "https://ibb.co/YbGxRGc",
+    "image2": "https://ibb.co/YbGxRGc",
+    "image": "https://i.ibb.co/M571YkC/24.jpgs",
     "instructorName": "Sophie Dubois",
     "instructorEmail": "sophie.dubois@email.com",
     "price": 54.99,
@@ -44,7 +46,8 @@
   {
     "courseId": "4",
     "className": "Spanish Learning Class",
-    "image": "https://ibb.co/BjXzHJN",
+    "image2": "https://ibb.co/BjXzHJN",
+    "image": "https://i.ibb.co/kJFsWf9/23.jpg",
     "instructorName": "Maria Rodriguez",
     "instructorEmail": "maria.rodriguez@email.com",
     "price": 49.99,
@@ -58,7 +61,8 @@
   {
     "courseId": "5",
     "className": "Chinese Learning Class",
-    "image": "https://ibb.co/D9Pkxf1",
+    "image2": "https://ibb.co/D9Pkxf1",
+    "image": "https://i.ibb.co/thmt68h/21.jpg",
     "instructorName": "Li Wei",
     "instructorEmail": "li.wei@email.com",
     "price": 59.99,
@@ -72,7 +76,8 @@
   {
     "courseId": "6",
     "className": "Japanese Learning Class",
-    "image": "https://ibb.co/fQs9TnB",
+    "image2": "https://ibb.co/fQs9TnB",
+    "image": "https://i.ibb.co/Jk0kN1r/20.jpg",
     "instructorName": "Takashi Yamamoto",
     "instructorEmail": "takashi.yamamoto@email.com",
     "price": 54.99,
@@ -86,7 +91,8 @@
   {
     "courseId": "7",
     "className": "Italian Learning Class",
-    "image": "https://ibb.co/WpGyrbc",
+    "image2": "https://ibb.co/WpGyrbc",
+    "image": "https://i.ibb.co/8xgVP6M/17.jpg",
     "instructorName": "Giovanni Russo",
     "instructorEmail": "giovanni.russo@email.com",
     "price": 49.99,
@@ -100,7 +106,8 @@
   {
     "courseId": "8",
     "className": "Russian Learning Class",
-    "image": "https://ibb.co/pLMLVXv",
+    "image2": "https://ibb.co/pLMLVXv",
+    "image": "https://i.ibb.co/yhBP1Ly/16.jpg",
     "instructorName": "Natalia Ivanova",
     "instructorEmail": "natalia.ivanova@email.com",
     "price": 59.99,
@@ -114,7 +121,8 @@
   {
     "courseId": "9",
     "className": "Arabic Learning Class",
-    "image": "https://ibb.co/ZhfZrt3",
+    "image2": "https://ibb.co/ZhfZrt3",
+    "image": "https://i.ibb.co/S567jY1/15.jpg",
     "instructorName": "Ahmed Hassan",
     "instructorEmail": "ahmed.hassan@email.com",
     "price": 54.99,
@@ -128,7 +136,8 @@
   {
     "courseId": "10",
     "className": "Portuguese Learning Class",
-    "image": "https://ibb.co/8Nm4CvR",
+    "image2": "https://ibb.co/8Nm4CvR",
+    "image": "https://i.ibb.co/qW1XnmR/12.jpg",
     "instructorName": "Ana Silva",
     "instructorEmail": "ana.silva@email.com",
     "price": 49.99,
@@ -142,7 +151,8 @@
   {
     "courseId": "24",
     "className": "Korean Learning Class",
-    "image": "https://ibb.co/D8Ksbw7",
+    "image2": "https://ibb.co/D8Ksbw7",
+    "image": "https://i.ibb.co/99RXmzr/11.jpg",
     "instructorName": "Ji-Hoon Kim",
     "instructorEmail": "jihoon.kim@email.com",
     "price": 59.99,
@@ -156,7 +166,8 @@
   {
     "courseId": "11",
     "className": "Swedish Learning Class",
-    "image": "https://ibb.co/HDmvL1H",
+    "image2": "https://ibb.co/HDmvL1H",
+    "image": "https://i.ibb.co/1ZRP3d8/9.jpg",
     "instructorName": "Eva Lindström",
     "instructorEmail": "eva.lindstrom@email.com",
     "price": 54.99,
@@ -170,7 +181,8 @@
   {
     "courseId": "12",
     "className": "Dutch Learning Class",
-    "image": "https://ibb.co/RHZH1FQ",
+    "image2": "https://ibb.co/RHZH1FQ",
+    "image": "https://i.ibb.co/9r1rKY9/5.jpg",
     "instructorName": "Pieter van den Berg",
     "instructorEmail": "pieter.vandenberg@email.com",
     "price": 49.99,
@@ -184,7 +196,8 @@
   {
     "courseId": "13",
     "className": "Turkish Learning Class",
-    "image": "https://ibb.co/q06fRFp",
+    "image2": "https://ibb.co/q06fRFp",
+    "image": "https://i.ibb.co/MGS9TXx/6.png",
     "instructorName": "Ayse Yilmaz",
     "instructorEmail": "ayse.yilmaz@email.com",
     "price": 59.99,
@@ -198,7 +211,8 @@
   {
     "courseId": "14",
     "className": "Hindi Learning Class",
-    "image": "https://ibb.co/28V3fM1",
+    "image2": "https://ibb.co/28V3fM1",
+    "image": "https://i.ibb.co/1rCnyPB/4.jpg",
     "instructorName": "Raj Kapoor",
     "instructorEmail": "raj.kapoor@email.com",
     "price": 54.99,
@@ -212,7 +226,8 @@
   {
     "courseId": "15",
     "className": "Greek Learning Class",
-    "image": "https://ibb.co/6t05DgY",
+    "image2": "https://ibb.co/6t05DgY",
+    "image": "https://i.ibb.co/Lvf3kfx/2.jpg",
     "instructorName": "Elena Papadopoulos",
     "instructorEmail": "elena.papadopoulos@email.com",
     "price": 49.99,
@@ -226,7 +241,8 @@
   {
     "courseId": "16",
     "className": "Polish Learning Class",
-    "image": "https://ibb.co/28YhQXt",
+    "image2": "https://ibb.co/28YhQXt",
+    "image": "https://i.ibb.co/MGS9TXx/6.png",
     "instructorName": "Michal Nowak",
     "instructorEmail": "michal.nowak@email.com",
     "price": 59.99,
@@ -240,7 +256,8 @@
   {
     "courseId": "17",
     "className": "Vietnamese Learning Class",
-    "image": "https://ibb.co/nrg3dYd",
+    "image2": "https://ibb.co/nrg3dYd",
+    "image": "https://i.ibb.co/gSbw5Zr/1.webp",
     "instructorName": "Linh Nguyen",
     "instructorEmail": "linh.nguyen@email.com",
     "price": 54.99,
@@ -254,7 +271,8 @@
   {
     "courseId": "18",
     "className": "Swahili Learning Class",
-    "image": "https://ibb.co/MVncPVC",
+    "image2": "https://ibb.co/MVncPVC",
+    "image": "https://i.ibb.co/Xph2fP8/3.jpg",
     "instructorName": "Juma Mbele",
     "instructorEmail": "juma.mbele@email.com",
     "price": 49.99,
@@ -268,7 +286,8 @@
   {
     "courseId": "19",
     "className": "Hebrew Learning Class",
-    "image": "https://ibb.co/QjMH2vK",
+    "image2": "https://ibb.co/QjMH2vK",
+    "image": "https://i.ibb.co/9r1rKY9/5.jpg",
     "instructorName": "Yael Cohen",
     "instructorEmail": "yael.cohen@email.com",
     "price": 59.99,
@@ -282,7 +301,8 @@
   {
     "courseId": "20",
     "className": "Finnish Learning Class",
-    "image": "https://ibb.co/cwdS7HC",
+    "image2": "https://ibb.co/cwdS7HC",
+    "image": "https://i.ibb.co/99RXmzr/11.jpg",
     "instructorName": "Mikko Virtanen",
     "instructorEmail": "mikko.virtanen@email.com",
     "price": 54.99,
@@ -296,7 +316,8 @@
   {
     "courseId": "21",
     "className": "Bengali Learning Class",
-    "image": "https://ibb.co/3srqbBs",
+    "image2": "https://ibb.co/3srqbBs",
+    "image": "https://i.ibb.co/M571YkC/24.jpg",
     "instructorName": "Ananya Das",
     "instructorEmail": "ananya.das@email.com",
     "price": 49.99,
@@ -310,7 +331,8 @@
   {
     "courseId": "22",
     "className": "Czech Learning Class",
-    "image": "https://ibb.co/3srqbBs",
+    "image2": "https://ibb.co/3srqbBs",
+    "image": "https://i.ibb.co/8xgVP6M/17.jpg",
     "instructorName": "Petr Novak",
     "instructorEmail": "petr.novak@email.com",
     "price": 59.99,
@@ -324,7 +346,8 @@
   {
     "courseId": "23",
     "className": "Tagalog Learning Class",
-    "image": "https://ibb.co/6t05DgY",
+    "image2": "https://ibb.co/6t05DgY",
+    "image": "https://i.ibb.co/8xgVP6M/17.jpg",
     "instructorName": "Maria Santos",
     "instructorEmail": "maria.santos@email.com",
     "price": 54.99,

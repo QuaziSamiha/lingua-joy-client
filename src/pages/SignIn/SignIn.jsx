@@ -14,7 +14,7 @@ const SignIn = () => {
 
   return (
     <>
-      <section className="my-16">
+      <section className="my-16 font-Outfit">
         <div className="flex justify-around items-center">
           <div className="w-[500px] h-[500px]">
             <h1 className="text-center font-bold text-3xl uppercase text-[#37474f]">
@@ -53,7 +53,7 @@ const SignIn = () => {
                 <input
                   type="submit"
                   value="Sign In"
-                  className="btn btn-block hover:skeleton hover:rounded-none bg-[#ba68c8] hover:bg-[#ba68c8] text-white hover:text-white text-lg rounded-none text-white]"
+                  className="tracking-wide font-medium btn btn-block hover:skeleton hover:rounded-none bg-[#ba68c8] hover:bg-[#ba68c8] text-white hover:text-white text-lg rounded-none text-white]"
                 />
               </div>
             </form>
@@ -73,7 +73,7 @@ const SignIn = () => {
               </div>
             </div>
             <div className="text-center text-sm my-8 text-[#37474f]  font-semibold">
-              New to LinguaJoy? <Link to='/signup' className="text-[#703e78]">Sign Up</Link>
+              New to LinguaJoy? <Link to='/signup' className="text-[#703e78] font-bold">Sign Up</Link>
             </div>
           </div>
           <div className="w-[500px] h-[500px]">

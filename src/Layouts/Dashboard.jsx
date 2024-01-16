@@ -8,6 +8,7 @@ import { FaClipboardList } from "react-icons/fa";
 import { FaUsersCog } from "react-icons/fa";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+// import Footer from '../components/Shared/Footer/Footer'
 
 const Dashboard = () => {
   return (
@@ -17,6 +18,7 @@ const Dashboard = () => {
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
           <Outlet />
+          {/* <Footer /> */}
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"

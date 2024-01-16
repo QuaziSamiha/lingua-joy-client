@@ -5,13 +5,12 @@ const Footer = () => {
       <section className="mt-16">
         <footer className="footer flex flex-col lg:flex-row justify-center lg:justify-evenly items-center p-10 bg-base-200 text-base-content">
           <nav className="lg:ml-24">
-            <header className="footer-title text-[#703e78]">Services</header>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
+            {/* TODO : LOGO OR WEBSITE NAME */}
+            <p className="uppercase text-[#703e78] font-bold text-3xl">linguajoy</p>
+            <p>Learn languages, make the world small</p>
           </nav>
           <nav className="lg:ml-24">
+            {/* TODO: SOCIAL ICON */}
             <header className="footer-title text-[#703e78]">Company</header>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>

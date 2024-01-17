@@ -7,8 +7,7 @@ import Swal from "sweetalert2";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const SignUp = () => {
-  const { user, loading, createUser, updateUserProfile } =
-    useContext(AuthContext);
+  const { loading, createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   // console.log(navigate)
@@ -20,16 +19,33 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     createUser(data.email, data.password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
         // ...
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
             console.log("user profile update successfully");
+            // const newUser = {
+            //   userName: data.name,
+            //   userEmail: data.email,
+            //   userPhoto: data.photoURL,
+            // };
+            // console.log(newUser);
+            // fetch(`http://localhost:5000/users`, {
+            //   method: "POST",
+            //   headers: {
+            //     "content-type": "application/json",
+            //   },
+            //   body: JSON.stringify(newUser),
+            // })
+            //   .then((res) => res.json())
+            //   .then((data) => {
+            //     console.log(data);
+            //   });
             Swal.fire({
               title: "Welcome to LinguaJoy!",
               width: 600,
@@ -176,7 +192,7 @@ const SignUp = () => {
               <div className="divider mx-6 divider-primary">
                 <span className="text-[#1f2937]">OR</span>
               </div>
-              <GoogleSignIn method={"Up"}/>
+              <GoogleSignIn method={"Up"} />
             </div>
             <div className="text-center text-sm my-8 text-[#37474f] font-semibold">
               Already have an account?{" "}

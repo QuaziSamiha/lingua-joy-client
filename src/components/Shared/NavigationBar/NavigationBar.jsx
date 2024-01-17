@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const { user, userLogOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    userLogOut()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error);
+      });
+  };
+
   const routes = [
     {
       id: "",
@@ -67,15 +82,32 @@ const NavigationBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="rounded-full">
-            <img src="" alt="" />
+          <div>
+            {user ? (
+              <img
+                src={user.photoURL}
+                alt=""
+                className="rounded-full w-12 h-12 mr-3"
+              />
+            ) : (
+              <> </>
+            )}
           </div>
-          <Link
-            to="/signup"
-            className="btn bg-[#dcb3e4] skeleton text-lg font-bold text-[#703e78] border-none rounded w-32"
-          >
-            Join Us
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn bg-[#dcb3e4] text-lg font-bold text-[#703e78] border-none rounded w-32"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <Link
+              to="/signup"
+              className="btn bg-[#dcb3e4] skeleton text-lg font-bold text-[#703e78] border-none rounded w-32"
+            >
+              Join Us
+            </Link>
+          )}
         </div>
       </div>
     </>

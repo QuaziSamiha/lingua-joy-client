@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/images/others/sign-up.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const SignUp = () => {
-  const { user, loading, createUser } = useContext(AuthContext);
+  const { user, loading, createUser, updateUserProfile } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   // console.log(navigate)
@@ -16,6 +16,7 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors },
+    // reset,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -26,36 +27,43 @@ const SignUp = () => {
         const user = userCredential.user;
         console.log(user);
         // ...
-        Swal.fire({
-          title: "Welcome to LinguaJoy!",
-          width: 600,
-          padding: "3em",
-          color: "#703e78",
-          background: "#fff url(/images/trees.png)",
-          backdrop: `
-        rgba(0,0,123,0.4)
-        url("/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `,
-          showClass: {
-            popup: `
-          animate__animated
-          animate__fadeInUp
-          animate__faster
-        `,
-          },
-          hideClass: {
-            popup: `
-          animate__animated
-          animate__fadeOutDown
-          animate__faster
-        `,
-          },
-          timer: 1000,
-          showConfirmButton: false,
-        });
-        navigate("/");
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log("user profile update successfully");
+            Swal.fire({
+              title: "Welcome to LinguaJoy!",
+              width: 600,
+              padding: "3em",
+              color: "#703e78",
+              background: "#fff url(/images/trees.png)",
+              backdrop: `
+            rgba(0,0,123,0.4)
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `,
+              showClass: {
+                popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `,
+              },
+              hideClass: {
+                popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `,
+              },
+              timer: 1000,
+              showConfirmButton: false,
+            });
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         // const errorCode = error.code;
@@ -165,21 +173,12 @@ const SignUp = () => {
               </div>
             </form>
             <div>
-              <div className="flex justify-center items-center">
-                <div className="border-t border-[#37474f] w-52"></div>
-                <p className="text-center #37474f text-sm px-2 font-semibold">
-                  Or
-                </p>
-                <div className="border-t border-[#37474f] w-52"></div>
+              <div className="divider mx-6 divider-primary">
+                <span className="text-[#1f2937]">OR</span>
               </div>
-              <div className="m-6">
-                <button className="btn btn-block bg-base-300 rounded-none text-lg font-semibold">
-                  Sing Up with Google
-                  <FcGoogle className="w-8 h-8" />
-                </button>
-              </div>
+              <GoogleSignIn method={"Up"}/>
             </div>
-            <div className="text-center text-sm my-8 text-[#37474f]  font-semibold">
+            <div className="text-center text-sm my-8 text-[#37474f] font-semibold">
               Already have an account?{" "}
               <Link to="/signin" className="text-[#703e78]">
                 Sign In

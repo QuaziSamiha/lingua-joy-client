@@ -14,7 +14,7 @@ const TopCourses = () => {
     );
     const top6Courses = sortedCourses.slice(0, 6);
     setTopCourses(top6Courses);
-  }, [courses]);
+  }, [courses]); // Add courses as a dependency
 
   //   console.log(topCourses);
   return (

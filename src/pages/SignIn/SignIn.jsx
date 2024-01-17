@@ -1,20 +1,39 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/images/others/sign-in.png";
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { userLogin } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    userLogin(data.email, data.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        // const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        setError(errorMessage);
+      });
+  };
 
   return (
     <>
@@ -25,6 +44,16 @@ const SignIn = () => {
               Sign In
             </h1>
             <form onSubmit={handleSubmit(onSubmit)} className="m-6">
+              {error ? (
+                <>
+                  <p className="text-red-500 text-xs text-center">
+                    Invalid Credintials
+                  </p>
+                </>
+              ) : (
+                <></>
+              )}
+
               <div className="my-3">
                 <label className="label">
                   <span className="label-text font-semibold text-[#37474f] text-lg">
@@ -57,7 +86,10 @@ const SignIn = () => {
                     {...register("password", { required: true })}
                   />{" "}
                   {showPassword ? (
-                    <button type="button" onClick={() => setShowPassword(false)}>
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(false)}
+                    >
                       <FaEye className="text-[#9cb7d8] mt-2 mr-2" />
                     </button>
                   ) : (
@@ -81,19 +113,10 @@ const SignIn = () => {
               </div>
             </form>
             <div>
-              <div className="flex justify-center items-center">
-                <div className="border-t border-[#37474f] w-52"></div>
-                <p className="text-center #37474f text-sm px-2 font-semibold">
-                  Or
-                </p>
-                <div className="border-t border-[#37474f] w-52"></div>
+              <div className="divider mx-6 divider-primary">
+                <span className="text-[#1f2937]">OR</span>
               </div>
-              <div className="m-6">
-                <button className="btn btn-block bg-base-300 rounded-none text-lg font-semibold">
-                  Sing In with Google
-                  <FcGoogle className="w-8 h-8" />
-                </button>
-              </div>
+              <GoogleSignIn method={"In"} />
             </div>
             <div className="text-center text-sm my-8 text-[#37474f]  font-semibold">
               New to LinguaJoy?{" "}

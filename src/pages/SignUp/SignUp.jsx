@@ -22,70 +22,76 @@ const SignUp = () => {
     // console.log(data);
     createUser(data.email, data.password)
       .then((userCredential) => {
-        // Signed in
+        // Signed up
         const user = userCredential.user;
-        // console.log(user);
-        // ...
-        updateUserProfile(data.name, data.photoURL)
-          .then(() => {
-            console.log("user profile update successfully");
-            // const newUser = {
-            //   userName: data.name,
-            //   userEmail: data.email,
-            //   userPhoto: data.photoURL,
-            // };
-            // console.log(newUser);
-            // fetch(`http://localhost:5000/users`, {
-            //   method: "POST",
-            //   headers: {
-            //     "content-type": "application/json",
-            //   },
-            //   body: JSON.stringify(newUser),
-            // })
-            //   .then((res) => res.json())
-            //   .then((data) => {
-            //     console.log(data);
-            //   });
-            Swal.fire({
-              title: "Welcome to LinguaJoy!",
-              width: 600,
-              padding: "3em",
-              color: "#703e78",
-              background: "#fff url(/images/trees.png)",
-              backdrop: `
+        console.log("signed up success");
+        return updateUserProfile(data.name, data.photoURL);
+      })
+      .then(() => {
+        console.log("user info updated");
+        console.log("user profile update successfully");
+        const newUser = {
+          userName: data.name,
+          userEmail: data.email,
+          userPhoto: data.photoURL,
+        };
+        // console.log(newUser);
+        fetch(`http://localhost:5000/users`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("inserted successfully samiha");
+            console.log(data);
+          });
+        Swal.fire({
+          title: "Welcome to LinguaJoy!",
+          width: 600,
+          padding: "3em",
+          color: "#703e78",
+          background: "#fff url(/images/trees.png)",
+          backdrop: `
             rgba(0,0,123,0.4)
             url("/images/nyan-cat.gif")
             left top
             no-repeat
           `,
-              showClass: {
-                popup: `
+          showClass: {
+            popup: `
               animate__animated
               animate__fadeInUp
               animate__faster
             `,
-              },
-              hideClass: {
-                popup: `
+          },
+          hideClass: {
+            popup: `
               animate__animated
               animate__fadeOutDown
               animate__faster
             `,
-              },
-              timer: 1000,
-              showConfirmButton: false,
-            });
-            navigate("/");
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+          },
+          timer: 1000,
+          showConfirmButton: false,
+        });
+        navigate("/");
       })
-      .catch((error) => {
-        // const errorCode = error.code;
-        const errorMessage = error.message;
-        // console.log(errorMessage);
+      .catch((createUserError) => {
+        // Handle createUser error
+        const errorCode = createUserError.code;
+        const errorMessage = createUserError.message;
+        console.log(createUserError, errorCode);
         setError(errorMessage);
+      })
+      .catch((updateProfileError) => {
+        // Handle updateUserProfile error
+        const updateErrorCode = updateProfileError.code;
+        // const updateErrorMessage = updateProfileError.message;
+        console.log(updateProfileError, updateErrorCode);
+        // Handle the error or set state accordingly
       });
   };
 

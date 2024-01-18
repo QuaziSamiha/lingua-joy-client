@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
-// import img from "../../../assets/images/courseImages/2.jpg";
+// import img from "../../../assets/courseImages/coursecourseImages/2.jpg";
 import { FaArrowRight } from "react-icons/fa";
 
 const CourseCard = ({ topCourse }) => {
   const {
     courseId,
-    image,
-    className,
+    courseImage,
+    courseName,
     instructorName,
     // totalStudent,
-    // totalSeat,
     // price,
   } = topCourse;
-  //   console.log(image);
+  //   console.log(courseImage);
   // const availableSeat = totalSeat - totalStudent;
 
   return (
@@ -24,11 +23,15 @@ const CourseCard = ({ topCourse }) => {
       >
         <div className="flex">
           <div>
-            <img src={image} className="h-24 w-24 my-2 mx-4 rounded-lg" alt="" />
+            <img
+              src={courseImage}
+              className="h-24 w-24 my-2 mx-4 rounded-lg"
+              alt=""
+            />
           </div>
           <div className="m-2 w-2/3 h-24">
             <h1 className="text-[#703e78] font-semibold text-md mb-1">
-              {className}
+              {courseName}
             </h1>
             <p className="text-[#703e78] font-medium text-sm">
               By {instructorName}

@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(true);

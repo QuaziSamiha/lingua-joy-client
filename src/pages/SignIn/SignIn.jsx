@@ -26,13 +26,14 @@ const SignIn = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     userLogin(data.email, data.password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigate("/");
+        // navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         // const errorCode = error.code;

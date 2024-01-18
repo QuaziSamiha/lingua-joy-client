@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import image from "../../assets/images/others/sign-up.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
@@ -10,6 +10,11 @@ const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+  console.log("from", from);
+  console.log("location: ", location);
 
   const {
     register,
@@ -77,7 +82,8 @@ const SignUp = () => {
           timer: 1000,
           showConfirmButton: false,
         });
-        navigate("/");
+        // navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((createUserError) => {
         // Handle createUser error

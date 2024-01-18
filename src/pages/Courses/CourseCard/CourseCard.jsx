@@ -4,15 +4,15 @@ const CourseCard = ({ course }) => {
   //   console.log(course);
   const {
     courseId,
-    image,
+    courseImage,
     className,
     instructorName,
     totalStudent,
-    totalSeat,
+    availableSeat,
     price,
   } = course;
-  //   console.log(image);
-  const availableSeat = totalSeat - totalStudent;
+  //   console.log(courseImage);
+  const currentAvailableSeat = availableSeat - totalStudent;
   //   console.log(availableSeat)
 
   return (
@@ -23,7 +23,7 @@ const CourseCard = ({ course }) => {
         } rounded-lg shadow-lg`}
       >
         <div className="flex justify-center ">
-          <img src={image} alt="" className="w-full m-6 rounded-md h-48" />
+          <img src={courseImage} alt="" className="w-full m-6 rounded-md h-48" />
         </div>
         <div
           className={`mx-6 ${
@@ -36,7 +36,7 @@ const CourseCard = ({ course }) => {
             <span className="text-lg font-semibold">{instructorName}</span>
           </p>
           <div className="flex justify-between">
-            <p>Available Seat: {availableSeat}</p>
+            <p>Available Seat: {currentAvailableSeat}</p>
             <p>Fee: ${price}</p>
           </div>
         </div>

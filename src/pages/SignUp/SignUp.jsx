@@ -7,10 +7,10 @@ import Swal from "sweetalert2";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const SignUp = () => {
-  const { loading, createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  // console.log(navigate)
+
   const {
     register,
     handleSubmit,

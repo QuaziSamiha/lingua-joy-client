@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import image from "../../assets/images/others/sign-in.png";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash } from "react-icons/fa6";
@@ -10,8 +10,15 @@ import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
   const { userLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  console.log("from: ", from);
+  console.log("location: ", location);
+
   const {
     register,
     handleSubmit,

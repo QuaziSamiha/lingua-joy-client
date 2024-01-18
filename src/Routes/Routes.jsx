@@ -48,6 +48,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         // load from backend
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/courses/${params.id}`),
       },
       {
         path: "signin",

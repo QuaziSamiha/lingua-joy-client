@@ -5,8 +5,11 @@ import { FaHeartCircleCheck } from "react-icons/fa6";
 import CoursePrerequisite from "./CoursePrerequisite";
 import CourseReward from "./CourseReward";
 import QuestionAnswer from "./QuestionAnswer";
+import { useLoaderData } from "react-router-dom";
 
 const CourseDetail = () => {
+  const course = useLoaderData();
+  console.log(course);
   return (
     <>
       <Banner />

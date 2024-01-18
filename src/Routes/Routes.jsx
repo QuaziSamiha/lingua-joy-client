@@ -15,6 +15,7 @@ import MakePayment from "../pages/Dashboard/Learner/MakePayment";
 import EnrolledCourse from "../pages/Dashboard/Learner/EnrolledCourse";
 import AddCourse from "../pages/Dashboard/Insturtor/AddCourse";
 import MyCourses from "../pages/Dashboard/Insturtor/MyCourses";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,7 +41,12 @@ const router = createBrowserRouter([
       {
         path: "course/:id",
         // TODO: WILL BE PRIVATE ROUTE
-        element: <CourseDetail />,
+        // element: <CourseDetail />,
+        element: (
+          <PrivateRoute>
+            <CourseDetail />
+          </PrivateRoute>
+        ),
         // load from backend
       },
       {
@@ -62,8 +68,8 @@ const router = createBrowserRouter([
         element: <AddCourse />,
       },
       {
-        path: 'mycourses',
-        element: <MyCourses />
+        path: "mycourses",
+        element: <MyCourses />,
       },
       // --------------FOR LEARNER-----------------------
       {

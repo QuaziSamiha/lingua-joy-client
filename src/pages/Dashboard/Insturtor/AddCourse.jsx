@@ -1,12 +1,57 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddCourse = () => {
+  const { user } = useContext(AuthContext);
+  // console.log(user.photoURL)
+  // console.log(user.email, user.displayName)
+  const { email, displayName } = user;
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    // console.log(data);
+    const newCourse = {
+      courseName: data.courseName,
+      courseImage: data.courseImage,
+      instructorName: user.displayName,
+      instructorEmail: user.email,
+      instructorPhoto: user.photoURL,
+      courseTime: data.courseTime,
+      courseDay: data.courseDay,
+      courseStatus: data.courseStatus,
+      totalStudent: data.totalStudent,
+      availableSeat: data.availableSeat,
+      price: data.price,
+    };
+    console.log(newCourse);
+    fetch(`http://localhost:5000/courses`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCourse),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("inserted course successfully samiha");
+        console.log(data);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Courses Added. Current Status Pending. One of Our Admin will Verify Soon",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
@@ -104,7 +149,8 @@ const AddCourse = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="instructor name . . ."
+                    value={displayName}
+                    // placeholder="instructor name . . ."
                     className="outline-none  border p-2 rounded ml-1"
                     {...register("instructorName", { required: true })}
                   />
@@ -122,7 +168,8 @@ const AddCourse = () => {
                   </label>
                   <input
                     type="email"
-                    placeholder="course image . . ."
+                    value={email}
+                    // placeholder="course image . . ."
                     className="outline-none  border p-2 rounded ml-1"
                     {...register("instructorEmail", { required: true })}
                   />

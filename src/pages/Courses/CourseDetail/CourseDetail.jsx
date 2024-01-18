@@ -10,6 +10,18 @@ import { useLoaderData } from "react-router-dom";
 const CourseDetail = () => {
   const course = useLoaderData();
   console.log(course);
+  const {
+    courseName,
+    courseImage,
+    instructorName,
+    // instructorEmail,
+    price,
+    // courseStatus,
+    totalStudent,
+    availableSeat,
+    courseTime,
+    courseDay,
+  } = course;
   return (
     <>
       <Banner />
@@ -19,7 +31,7 @@ const CourseDetail = () => {
             <div className=" text-[#703e78]">
               <div className="flex justify-between items-center">
                 <p className=" text-3xl leading-2 font-bold mb-1">
-                  English Learning Class
+                  {courseName}
                 </p>
                 <div className="flex justify-evenly items-center bg-[#ba68c8] text-white hover:bg-[#703e78] ">
                   <button className="w-full text-lg py-2 rounded mx-1 ">
@@ -30,29 +42,29 @@ const CourseDetail = () => {
               </div>
               <p className="text-lg mb-1">
                 <span className="font-bold"> Instructor Name:</span>{" "}
-                <span className="font-semibold">John Smith</span>
+                <span className="font-semibold">{instructorName}</span>
               </p>
               <p className="text-lg mb-1">
                 <span className="font-bold">Course Duration:</span>{" "}
-                <span className="font-semibold"> 6 weeks </span>
+                <span className="font-semibold"> 3 weeks </span>
               </p>
               <p className="text-lg mb-1">
                 <span className="font-bold">Time:</span>{" "}
-                <span className="font-semibold"> 9:30 am - 10:30 am</span>
+                <span className="font-semibold">{courseTime}</span>
               </p>
               <p className="text-lg mb-1">
                 <span className="font-bold"> Schedule:</span>{" "}
-                <span className="font-semibold">
-                  Tuesday, Thursday, Saturday
-                </span>{" "}
+                <span className="font-semibold">{courseDay}</span>{" "}
               </p>
               <p className="text-lg mb-1">
                 <span className="font-bold">Available Seats:</span>{" "}
-                <span className="font-semibold">6</span>
+                <span className="font-semibold">
+                  {availableSeat - totalStudent}
+                </span>
               </p>
               <p className="text-lg mb-1">
                 <span className="font-bold">Price:</span>{" "}
-                <span className="font-semibold">$49.99</span>
+                <span className="font-semibold">{price}</span>
               </p>
             </div>
             <div>
@@ -63,9 +75,9 @@ const CourseDetail = () => {
           </div>
           <div className="w-1/3  bg-[#ba68c8]">
             <div className="my-4">
-              <div className="flex justify-center">
+              <div className="flex justify-center mx-6">
                 <img
-                  src={img}
+                  src={courseImage}
                   alt=""
                   className="rounded-md"
                   data-aos="fade-up-right"

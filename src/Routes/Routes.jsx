@@ -16,6 +16,7 @@ import EnrolledCourse from "../pages/Dashboard/Learner/EnrolledCourse";
 import AddCourse from "../pages/Dashboard/Insturtor/AddCourse";
 import MyCourses from "../pages/Dashboard/Insturtor/MyCourses";
 import PrivateRoute from "./PrivateRoute";
+import { FaZ } from "react-icons/fa6";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -63,7 +64,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "addcourse",

@@ -5,7 +5,7 @@ const CourseCard = ({ course }) => {
   const {
     _id,
     courseImage,
-    className,
+    courseName,
     instructorName,
     totalStudent,
     availableSeat,
@@ -34,7 +34,7 @@ const CourseCard = ({ course }) => {
             currentAvailableSeat === 0 ? "text-white" : "text-[#703e78]"
           }`}
         >
-          <p className=" text-xl mb-1 font-bold leading-relaxed">{className}</p>
+          <p className=" text-xl mb-1 font-bold leading-relaxed">{courseName}</p>
           <p className="mb-1">
             Conducted by{" "}
             <span className="text-lg font-semibold">{instructorName}</span>

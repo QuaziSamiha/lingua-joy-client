@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-// import img from "../../../assets/courseImages/coursecourseImages/2.jpg";
 import { FaArrowRight } from "react-icons/fa";
 
 const CourseCard = ({ topCourse }) => {
   const {
-    courseId,
+    _id,
     courseImage,
     courseName,
     instructorName,
@@ -41,7 +40,7 @@ const CourseCard = ({ topCourse }) => {
                 className="rounded-full bg-[#ba68c8] p-2 hover:tooltip hover:tooltip-open hover:tooltip-bottom"
                 data-tip="Details"
               >
-                <Link to={`/course/${courseId}`} className="">
+                <Link to={`/course/${_id}`} className="">
                   <FaArrowRight className="text-white h-3 w-3" />
                 </Link>
               </div>

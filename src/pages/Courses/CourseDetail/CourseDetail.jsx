@@ -6,11 +6,19 @@ import CoursePrerequisite from "./CoursePrerequisite";
 import CourseReward from "./CourseReward";
 import QuestionAnswer from "./QuestionAnswer";
 import { useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 const CourseDetail = () => {
   const course = useLoaderData();
-  console.log(course);
+  // console.log(course);
+  const { user } = useContext(AuthContext);
+  // console.log(user)
+  const [refetch] = useCart();
   const {
+    _id,
     courseName,
     courseImage,
     instructorName,
@@ -22,6 +30,48 @@ const CourseDetail = () => {
     courseTime,
     courseDay,
   } = course;
+
+  const handleAddToFavourite = () => {
+    // console.log(course);
+    if (user && user.email) {
+      const addingCourse = {
+        courseId: _id,
+        courseName,
+        courseImage,
+        instructorName,
+        totalStudent,
+        availableSeat,
+        courseTime,
+        courseDay,
+        userEmail: user.email,
+      };
+      console.log(addingCourse);
+      fetch(`http://localhost:5000/carts`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addingCourse),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            refetch
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Course Added to List",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
   return (
     <>
       <Banner />
@@ -34,7 +84,10 @@ const CourseDetail = () => {
                   {courseName}
                 </p>
                 <div className="flex justify-evenly items-center bg-[#ba68c8] text-white hover:bg-[#703e78] ">
-                  <button className="w-full text-lg py-2 rounded mx-1 ">
+                  <button
+                    onClick={handleAddToFavourite}
+                    className="w-full text-lg py-2 rounded mx-1 outline-none"
+                  >
                     Add to Favourite
                   </button>
                   <FaHeartCircleCheck className="w-6 h-6 pr-1" />

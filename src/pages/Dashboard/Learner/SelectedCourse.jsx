@@ -1,13 +1,41 @@
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useCart from "../../../hooks/useCart";
+import Swal from "sweetalert2";
 
 const SelectedCourse = () => {
+  const [cart, refetchCart] = useCart()
+  // console.log(cart)
+  const handleDelete = (course) => {
+    console.log(course)
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, remove it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${course._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetchCart
+              Swal.fire("Removed!", "Your file has been removed", "success");
+            }
+          });
+      }
+    });
+  }
   return (
     <>
-      <section className=" w-full ">
+      <section className=" w-full my-12">
         <div className="lg:mx-16">
           <div className="bg-[#ba68c8] py-4 rounded-t-lg font-bold leading-3 text-white">
-            <h1 className="text-2xl pl-4">Total Course: {7}</h1>
+            <h1 className="text-2xl pl-4">Total Course: {cart.length}</h1>
           </div>
           <div className="mt-4">
             <div className="overflow-x-auto">
@@ -23,102 +51,35 @@ const SelectedCourse = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>1</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                      </div>
-                    </td>
-                    <td className="">Ema Watson</td>
-                    <td className="">${70.0}</td>
-                    <td>
-                      <div>
-                        <Link to={`/dashboard/payment/${7}`}>
-                          <button className="bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded">
-                            Pay
-                          </button>
-                        </Link>
-                        <button className="bg-red-500 hover:bg-red-600 p-2.5 ml-3 text-white rounded">
-                          <FaTrashAlt />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>2</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                      </div>
-                    </td>
-                    <td className="">Ema Watson</td>
-                    <td className="">${70.0}</td>
-                    <td>
-                      <div>
-                        <Link to={`/dashboard/payment/${7}`}>
-                          <button className="bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded">
-                            Pay
-                          </button>
-                        </Link>
-                        <button className="bg-red-500 hover:bg-red-600 p-2.5 ml-3 text-white rounded">
-                          <FaTrashAlt />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>3</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                      </div>
-                    </td>
-                    <td className="">Ema Watson</td>
-                    <td className="">${70.0}</td>
-                    <td>
-                      <div>
-                        <Link to={`/dashboard/payment/${7}`}>
-                          <button className="bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded">
-                            Pay
-                          </button>
-                        </Link>
-                        <button className="bg-red-500 hover:bg-red-600 p-2.5 ml-3 text-white rounded">
-                          <FaTrashAlt />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>4</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                      </div>
-                    </td>
-                    <td className="">Ema Watson</td>
-                    <td className="">${70.0}</td>
-                    <td>
-                      <div>
-                        <Link to={`/dashboard/payment/${7}`}>
-                          <button className="bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded">
-                            Pay
-                          </button>
-                        </Link>
-                        <button className="bg-red-500 hover:bg-red-600 p-2.5 ml-3 text-white rounded">
-                          <FaTrashAlt />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
+                  {
+                    cart.map((course, index) =>
+                      // console.log(course)
+                      <tr key={course._id} className="hover:bg-[#e1e4e9] font-medium">
+                        <th>{index + 1}</th>
+                        <td>
+                          <div>
+                            <p className="text-lg">{course.courseName}</p>
+                            <p className="text-xs">{course.courseTime}</p>
+                            <p className="text-xs">{course.courseDay}</p>
+                          </div>
+                        </td>
+                        <td className="">{course.instructorName}</td>
+                        <td className="">${course.price || 50.00}</td>
+                        <td>
+                          <div>
+                            <Link to={`/dashboard/payment/${course._id}`}>
+                              <button className="bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded">
+                                Pay
+                              </button>
+                            </Link>
+                            <button onClick={() => handleDelete(course)} className="bg-red-500 hover:bg-red-600 p-2.5 ml-3 text-white rounded">
+                              <FaTrashAlt />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    )
+                  }
                 </tbody>
               </table>
             </div>

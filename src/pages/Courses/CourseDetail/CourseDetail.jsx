@@ -5,10 +5,11 @@ import { FaHeartCircleCheck } from "react-icons/fa6";
 import CoursePrerequisite from "./CoursePrerequisite";
 import CourseReward from "./CourseReward";
 import QuestionAnswer from "./QuestionAnswer";
+import Swal from "sweetalert2";
+// -------------------------------------------IMPORTANT IMPORTS-------------------------------------
 import { useLoaderData } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
-import Swal from "sweetalert2";
 import useCart from "../../../hooks/useCart";
 
 const CourseDetail = () => {
@@ -16,7 +17,7 @@ const CourseDetail = () => {
   // console.log(course);
   const { user } = useContext(AuthContext);
   // console.log(user)
-  const [refetch] = useCart();
+  const [refetchCart] = useCart();
   const {
     _id,
     courseName,
@@ -43,9 +44,10 @@ const CourseDetail = () => {
         availableSeat,
         courseTime,
         courseDay,
+        price,
         userEmail: user.email,
       };
-      console.log(addingCourse);
+      // console.log(addingCourse);
       fetch(`http://localhost:5000/carts`, {
         method: "POST",
         headers: {
@@ -57,7 +59,7 @@ const CourseDetail = () => {
         .then((data) => {
           console.log(data);
           if (data.insertedId) {
-            refetch
+            refetchCart
             Swal.fire({
               position: "top-end",
               icon: "success",

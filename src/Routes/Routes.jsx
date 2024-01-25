@@ -16,7 +16,7 @@ import EnrolledCourse from "../pages/Dashboard/Learner/EnrolledCourse";
 import AddCourse from "../pages/Dashboard/Insturtor/AddCourse";
 import MyCourses from "../pages/Dashboard/Insturtor/MyCourses";
 import PrivateRoute from "./PrivateRoute";
-import { FaZ } from "react-icons/fa6";
+import ManageCourses from "../pages/Dashboard/Admin/ManageCourses/ManageCourses";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -71,6 +71,11 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "manageCourses",
+        element: <ManageCourses />,
+      },
+      // ---------------------------FOR INSTRUCTOR------------------------------
+      {
         path: "addcourse",
         element: <AddCourse />,
       },
@@ -86,7 +91,8 @@ const router = createBrowserRouter([
       {
         path: "payment/:id",
         element: <MakePayment />,
-        loader: ({ params }) => fetch(`http://localhost:5000/carts/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/carts/${params.id}`),
       },
       {
         path: "paymenthistory",

@@ -46,7 +46,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/dashboard/manageCourses'>
                 <IoSettings className="w-4 h-4" />
                 Manage Courses
               </Link>

@@ -1,4 +1,4 @@
-import img from "../../../assets/images/courseImages/10.jpg";
+// import img from "../../../assets/images/courseImages/10.jpg";
 import Banner from "../../../components/Shared/Banner/Banner";
 import CourseOutline from "./CourseOutline";
 import { FaHeartCircleCheck } from "react-icons/fa6";

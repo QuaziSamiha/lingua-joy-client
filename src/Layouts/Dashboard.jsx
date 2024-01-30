@@ -52,7 +52,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/dashboard/manageUsers'>
                 <FaUsersCog className="w-4 h-4" />
                 Manage Users
               </Link>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import useCourse from "../../../../hooks/useCourse";
 import photo from "../../../../assets/images/instructor/ins1.jpg";

@@ -39,6 +39,7 @@ const SignUp = () => {
           userName: data.name,
           userEmail: data.email,
           userPhoto: data.photoURL,
+          isAdmin: false
         };
         // console.log(newUser);
         fetch(`http://localhost:5000/users`, {

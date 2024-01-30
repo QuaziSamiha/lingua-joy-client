@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home/Home";
-import AboutUs from "../pages/AboutUs/AboutUs/AboutUs";
 import Instructors from "../pages/Instructors/Instructors/Instructors";
 import Courses from "../pages/Courses/Courses/Courses";
 import SignIn from "../pages/SignIn/SignIn";
@@ -17,6 +16,7 @@ import AddCourse from "../pages/Dashboard/Insturtor/AddCourse";
 import MyCourses from "../pages/Dashboard/Insturtor/MyCourses";
 import PrivateRoute from "./PrivateRoute";
 import ManageCourses from "../pages/Dashboard/Admin/ManageCourses/ManageCourses";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "aboutus",
-        element: <AboutUs />,
       },
       {
         path: "instructors",
@@ -73,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "manageCourses",
         element: <ManageCourses />,
+      },
+      {
+        path: 'manageUsers',
+        element: <ManageUsers />
       },
       // ---------------------------FOR INSTRUCTOR------------------------------
       {

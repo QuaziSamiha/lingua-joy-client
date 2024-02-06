@@ -3,7 +3,7 @@ import useUsers from "../../../../hooks/useUsers";
 
 const ManageUsers = () => {
   const [allUsers, refetchAllUsers] = useUsers();
-  // console.log(allUsers);
+  console.log(allUsers);
 
   const handleMakeAdmin = (user) => {
     // console.log("clicked");
@@ -73,7 +73,12 @@ const ManageUsers = () => {
                         <div>
                           <button
                             onClick={() => handleMakeAdmin(user)}
-                            className="bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded"
+                            disabled={user.isAdmin}
+                            className={`bg-[#ba68c8] hover:bg-[#703e78] p-2 text-white rounded ${
+                              user.isAdmin
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
                           >
                             Make Admin
                           </button>

@@ -5,12 +5,10 @@ import ban2 from "../../../assets/images/banner/2.jpg";
 import ban1 from "../../../assets/images/banner/4.jpg";
 import ban3 from "../../../assets/images/banner/5.jpg";
 import ban6 from "../../../assets/images/banner/6.jpg";
-import ban8 from "../../../assets/images/banner/7.jpg";
 import ban5 from "../../../assets/images/banner/8.jpg";
 import ban7 from "../../../assets/images/banner/9.jpg";
 
 function ban() {
-  // const images = [ban1, ban2, ban3, ban4, ban5, ban6, ban7, ban8];
   const bannerContent = [
     {
       image: ban7,

@@ -1,4 +1,5 @@
 import React from "react";
+// USED TO MANIPULATE WEB DOM
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
@@ -8,7 +9,7 @@ import { InstructorProvider } from "./providers/InstructorContext/InstructorCont
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import router from "./routes/Routes";
 import AuthProvider from "./providers/AuthProvider/AuthProvider";
-
+// ENTRY POINT OF REACT
 AOS.init({
   // Global settings here
 });

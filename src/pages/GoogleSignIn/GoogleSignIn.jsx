@@ -24,6 +24,8 @@ const GoogleSignIn = ({ method }) => {
           userName: user.displayName,
           userEmail: user.email,
           userPhoto: user.photoURL,
+          // isAdmin: false,
+          userRole: "normal",
         };
         // console.log(newUser);
         fetch(`http://localhost:5000/users`, {

@@ -8,9 +8,22 @@ import { FaClipboardList } from "react-icons/fa";
 import { FaUsersCog } from "react-icons/fa";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+import useUsers from "../hooks/useUsers";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 // import Footer from '../components/Shared/Footer/Footer'
 
 const Dashboard = () => {
+  const [allUsers] = useUsers();
+  const { user } = useContext(AuthContext);
+  // console.log(user);
+  const userInfo = allUsers.filter(
+    (currentUser) => currentUser.userEmail === user.email
+  );
+  // console.log(userInfo);
+  const [currentUserInfo] = userInfo;
+  console.log(currentUserInfo.userRole)
+
   return (
     <>
       <div className="drawer lg:drawer-open">
@@ -38,70 +51,84 @@ const Dashboard = () => {
               LinguaJoy
             </h1>
 
+            {currentUserInfo.userRole === "admin" ? (
+              <>
+                <li>
+                  <Link to="/dashboard/home">
+                    <FaHome className="w-4 h-4" />
+                    Admin Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/manageCourses">
+                    <IoSettings className="w-4 h-4" />
+                    Manage Courses
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/manageUsers">
+                    <FaUsersCog className="w-4 h-4" />
+                    Manage Users
+                  </Link>
+                </li>
+              </>
+            ) : currentUserInfo.userRole === "insturctor" ? (
+              <>
+                <li>
+                  <Link to="/dashboard/home">
+                    <FaHome className="w-4 h-4" /> Instructor Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/addcourse">
+                    <MdAddchart className="w-4 h-4" />
+                    Add Course
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/mycourses">
+                    <FaClipboardList className="w-4 h-4" />
+                    My courses
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/dashboard/home">
+                    {" "}
+                    <FaHome className="w-4 h-4" />
+                    Learner Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/selectedcourses">
+                    <FaListCheck className="w-4 h-4" />
+                    Selected Courses
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/enrolledcourses">
+                    <MdFormatListBulletedAdd className="w-4 h-4" />
+                    Enrolled Courses
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/paymenthistory">
+                    {" "}
+                    <FaFileInvoiceDollar className="w-4 h-4" />
+                    payment history
+                  </Link>
+                </li>
+              </>
+            )}
+
             {/* -----------------------for an admin---------------------------- */}
-            <li>
-              <Link to="/dashboard/home">
-                <FaHome className="w-4 h-4" />
-                Admin Home
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/manageCourses'>
-                <IoSettings className="w-4 h-4" />
-                Manage Courses
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/manageUsers'>
-                <FaUsersCog className="w-4 h-4" />
-                Manage Users
-              </Link>
-            </li>
+
             {/* for a instructor */}
-            <li>
-              <Link to="/dashboard/home">
-                <FaHome className="w-4 h-4" /> Instructor Home
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/addcourse'>
-                <MdAddchart className="w-4 h-4" />
-                Add Course
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/mycourses'>
-                <FaClipboardList className="w-4 h-4" />
-                My courses
-              </Link>
-            </li>
+
             {/* -------------for a student------------------ */}
-            <li>
-              <Link to="/dashboard/home">
-                {" "}
-                <FaHome className="w-4 h-4" />
-                Learner Home
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/selectedcourses'>
-                <FaListCheck className="w-4 h-4" />
-                Selected Courses
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/enrolledcourses'>
-                <MdFormatListBulletedAdd className="w-4 h-4" />
-                Enrolled Courses
-              </Link>
-            </li>
-            <li>
-              <Link to='/dashboard/paymenthistory'>
-                {" "}
-                <FaFileInvoiceDollar className="w-4 h-4"/>
-                payment history
-              </Link>
-            </li>
+
             <div className="divider divider-neutral"></div>
             <li>
               <Link to="/">

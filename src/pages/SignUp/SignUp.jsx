@@ -28,6 +28,7 @@ const SignUp = () => {
     createUser(data.email, data.password)
       .then((userCredential) => {
         // Signed up
+        // eslint-disable-next-line no-unused-vars
         const user = userCredential.user;
         console.log("signed up success");
         return updateUserProfile(data.name, data.photoURL);
@@ -39,7 +40,8 @@ const SignUp = () => {
           userName: data.name,
           userEmail: data.email,
           userPhoto: data.photoURL,
-          isAdmin: false
+          // isAdmin: false,
+          userRole: 'normal'
         };
         // console.log(newUser);
         fetch(`http://localhost:5000/users`, {

@@ -1,12 +1,25 @@
 import useUsers from "../../../hooks/useUsers";
 
 const Instructors = () => {
-  const [allUsers] = useUsers();
+  const [allUsers, isLoadingAllUsers] = useUsers();
   // console.log(allUsers);
+  
+  if (allUsers.length == 0 && isLoadingAllUsers) {
+    return (
+      <div className="flex justify-center items-center mt-16">
+        <span className="loading loading-ring loading-xs"></span>
+        <span className="loading loading-ring loading-sm"></span>
+        <span className="loading loading-ring loading-md"></span>
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
+  }
+
   const allInstructors = allUsers.filter(
     (user) => user.userRole === "insturctor"
   );
   // console.log(allInstructors);
+
   return (
     <>
       <section className="mx-4 lg:mx-16 ">

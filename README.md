@@ -65,6 +65,7 @@ TODO : FUTURE FEATURES
    - Number of Classes taken by the Instructor. 
    - Name of the Classes taken by the Instructor. 
    - `See Classes` button to show classes by this Instructor. This will take to a new link
+   - PAGINATION - will be applied
 
 7. Classes page:
 Show all approved classes on this page. Each Class will have the following:

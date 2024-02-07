@@ -7,19 +7,19 @@ const CourseCard = ({ course }) => {
     courseImage,
     courseName,
     instructorName,
-    totalStudent,
+    // totalStudent,
     availableSeat,
     price,
   } = course;
   //   console.log(courseImage);
-  const currentAvailableSeat = availableSeat - totalStudent;
+  // const currentAvailableSeat = availableSeat - totalStudent;
   //   console.log(availableSeat)
 
   return (
     <div data-aos="fade-up" data-aos-duration="2000">
       <div
         className={`${
-          currentAvailableSeat === 0 ? "bg-red-600" : "bg-[#fafafa]"
+          availableSeat === 0 ? "bg-red-600" : "bg-[#fafafa]"
         } rounded-lg shadow-lg`}
       >
         <div className="flex justify-center ">
@@ -31,7 +31,7 @@ const CourseCard = ({ course }) => {
         </div>
         <div
           className={`mx-6 ${
-            currentAvailableSeat === 0 ? "text-white" : "text-[#703e78]"
+            availableSeat === 0 ? "text-white" : "text-[#703e78]"
           }`}
         >
           <p className=" text-xl mb-1 font-bold leading-relaxed">{courseName}</p>
@@ -40,7 +40,7 @@ const CourseCard = ({ course }) => {
             <span className="text-lg font-semibold">{instructorName}</span>
           </p>
           <div className="flex justify-between">
-            <p>Available Seat: {currentAvailableSeat}</p>
+            <p>Available Seat: {availableSeat}</p>
             <p>Fee: ${price}</p>
           </div>
         </div>
@@ -48,7 +48,7 @@ const CourseCard = ({ course }) => {
           <Link to={`/course/${_id}`}>
             <button
               className={`w-full  my-4 py-2 rounded-md ${
-                currentAvailableSeat === 0
+                availableSeat === 0
                   ? "bg-white text-red-800 hover:bg-[#fafafa]"
                   : "bg-[#ba68c8] text-white hover:bg-[#703e78]"
               }`}

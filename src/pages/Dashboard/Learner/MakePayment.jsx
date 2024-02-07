@@ -4,18 +4,25 @@ import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 import useEnrolled from "../../../hooks/useEnrolled";
 import Swal from "sweetalert2";
 import useCart from "../../../hooks/useCart";
+import useCourse from "../../../hooks/useCourse";
 
 const MakePayment = () => {
-  const course = useLoaderData()
+  const course = useLoaderData();
   // console.log(course)
-  const { user } = useContext(AuthContext)
-  const [refetchEnrolledCourse] = useEnrolled()
-  const [refetchCart] = useCart()
+  const [courses, refetch] = useCourse();
+  // console.log(courses)
+  const paidCourse = courses.filter(
+    (findCourse) => findCourse._id === course.courseId
+  );
+  console.log(paidCourse[0]);
+  const { user } = useContext(AuthContext);
+  const [refetchEnrolledCourse] = useEnrolled();
+  const [refetchCart] = useCart();
 
   const handlePayment = (course) => {
-    // console.log(course)
+    console.log(course);
     if (user && user.email) {
-      const addingCourse = { ...course }
+      const addingCourse = { ...course };
       // console.log(addingCourse)
       fetch(`http://localhost:5000/enrolledCourses`, {
         method: "POST",
@@ -28,14 +35,28 @@ const MakePayment = () => {
         .then((data) => {
           console.log(data);
           if (data.insertedId) {
-            refetchEnrolledCourse
+            refetchEnrolledCourse;
             fetch(`http://localhost:5000/carts/${course._id}`, {
               method: "DELETE",
             })
               .then((res) => res.json())
               .then((data) => {
                 if (data.deletedCount > 0) {
-                  refetchCart
+                  refetchCart;
+                  fetch(
+                    `http://localhost:5000/courses/updated/${paidCourse[0]._id}`,
+                    {
+                      method: "PATCH",
+                    }
+                  )
+                    .then((res) => res.json())
+                    .then((data) => {
+                      console.log(data);
+                      if (data.modifiedCount) {
+                        refetch();
+                        console.log(paidCourse[0].courseName, "updated");
+                      }
+                    });
                 }
               });
             Swal.fire({
@@ -51,7 +72,7 @@ const MakePayment = () => {
           console.log(error);
         });
     }
-  }
+  };
   return (
     <>
       <section className=" w-full ">
@@ -77,7 +98,10 @@ const MakePayment = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <button onClick={() => handlePayment(course)} className="text-white bg-[#ba68c8] hover:bg-[#703e78] my-4 px-10 py-3 rounded text-lg font-semibold">
+              <button
+                onClick={() => handlePayment(course)}
+                className="text-white bg-[#ba68c8] hover:bg-[#703e78] my-4 px-10 py-3 rounded text-lg font-semibold"
+              >
                 Make Payment
               </button>
             </div>

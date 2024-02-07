@@ -21,12 +21,13 @@ const ManageCourses = () => {
 
   const handleCourseApproved = (course) => {
     // console.log(course)
+    // console.log('clicked')
     fetch(`http://localhost:5000/courses/approved/${course._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         if (data.modifiedCount) {
           refetch();
           Swal.fire({
@@ -41,7 +42,7 @@ const ManageCourses = () => {
   };
 
   const handleCourseDenied = (course) => {
-    console.log(course);
+    // console.log(course);
     fetch(`http://localhost:5000/courses/denied/${course._id}`, {
       method: "PATCH",
     })
@@ -149,11 +150,11 @@ const ManageCourses = () => {
                             <div className="tooltip" data-tip="Approve">
                               <button
                                 onClick={() => handleCourseApproved(course)}
-                                disabled={course.courseStatus !== "pending"}
+                                disabled={course.courseStatus !== "Pending"}
                                 className={`bg-[#ba68c8] hover:bg-[#703e78] text-white rounded ${
-                                  course.courseStatus !== "pending"
+                                  course.courseStatus !== "Pending"
                                     ? "opacity-50 cursor-not-allowed"
-                                    : "tooltip"
+                                    : ""
                                 }`}
                               >
                                 <FcAcceptDatabase className="h-8 w-8" />
@@ -163,9 +164,9 @@ const ManageCourses = () => {
                             <div className="tooltip" data-tip="Deny">
                               <button
                                 onClick={() => handleCourseDenied(course)}
-                                disabled={course.courseStatus !== "pending"}
+                                disabled={course.courseStatus !== "Pending"}
                                 className={`bg-red-500 hover:bg-red-600 p-2 ml-3 text-white rounded ${
-                                  course.courseStatus !== "pending"
+                                  course.courseStatus !== "Pending"
                                     ? "opacity-50 cursor-not-allowed"
                                     : "tooltip"
                                 }`}

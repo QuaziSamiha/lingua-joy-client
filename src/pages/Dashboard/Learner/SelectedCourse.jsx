@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const SelectedCourse = () => {
   const [cart, refetchCart] = useCart()
-  // console.log(cart)
+  console.log(cart)
   const handleDelete = (course) => {
     console.log(course)
     Swal.fire({

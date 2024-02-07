@@ -49,7 +49,7 @@ function ban() {
   return (
     <>
       <section>
-        <Carousel autoPlay="true" className="">
+        <Carousel autoPlay="true" className="" showThumbs={false}>
           {bannerContent.map((content, index) => (
             <div key={index} className="relative">
               <div className="">

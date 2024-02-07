@@ -14,15 +14,31 @@ import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 // import Footer from '../components/Shared/Footer/Footer'
 
 const Dashboard = () => {
-  const [allUsers] = useUsers();
+  const [allUsers, isLoadingAllUsers] = useUsers();
+  // console.log(allUsers);
   const { user } = useContext(AuthContext);
   // console.log(user);
+
+  if (allUsers.length == 0 && isLoadingAllUsers) {
+    return (
+      <div className="flex justify-center items-center mt-16">
+        <span className="loading loading-ring loading-xs"></span>
+        <span className="loading loading-ring loading-sm"></span>
+        <span className="loading loading-ring loading-md"></span>
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
+  }
+
   const userInfo = allUsers.filter(
     (currentUser) => currentUser.userEmail === user.email
   );
   // console.log(userInfo);
+
   const [currentUserInfo] = userInfo;
-  console.log(currentUserInfo.userRole)
+  // console.log(currentUserInfo);
+  // console.log(currentUserInfo.userRole)
+  // console.log(userInfo[0]);
 
   return (
     <>

@@ -64,6 +64,7 @@ const ManageUsers = () => {
                     <th>#</th>
                     <th></th>
                     <th>Details</th>
+                    <th>User Role</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -90,6 +91,7 @@ const ManageUsers = () => {
                           <p className="text-sm">{user.userEmail}</p>
                         </div>
                       </td>
+                      <td className="capitalize">{user.userRole === 'normal' ? 'Learner' : user.userRole}</td>
                       <td>
                         <div>
                           <button

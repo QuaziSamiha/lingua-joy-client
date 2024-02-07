@@ -1,4 +1,15 @@
+import useCourse from "../../../hooks/useCourse";
+
 const MyCourses = () => {
+  const [courses, isLoading] = useCourse()
+  console.log(courses)
+  // fetch(`http://localhost:5000/courses`, {
+
+  // })
+  // .then(res => res.json())
+  // .then(data => console.log(data))
+  // .catch(error => console.log(error))
+
   return (
     <>
       <section className="w-full">

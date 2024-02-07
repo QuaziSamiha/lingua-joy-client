@@ -5,17 +5,18 @@ import photo from "../../../../assets/images/instructor/ins1.jpg";
 import { GiCancel } from "react-icons/gi";
 import { FcAcceptDatabase } from "react-icons/fc";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const ManageCourses = () => {
   // eslint-disable-next-line no-unused-vars
   const [courses, refetch, isLoading] = useCourse();
   // console.log(courses);
-  const [isApproved, setIsApproved] = useState(false);
-  const [isDenied, setIsDenied] = useState(false);
+  // const [isApproved, setIsApproved] = useState(false);
+  // const [isDenied, setIsDenied] = useState(false);
 
   if (isLoading) {
     return (
-      <div>
+      <div className="flex justify-center items-center mt-16">
         <span className="loading loading-dots loading-xs text-primary"></span>
         <span className="loading loading-dots loading-sm text-primary"></span>
         <span className="loading loading-dots loading-md text-primary"></span>
@@ -23,6 +24,49 @@ const ManageCourses = () => {
       </div>
     );
   }
+
+  const handleCourseApproved = (course) => {
+    // console.log(course)
+    fetch(`http://localhost:5000/courses/approved/${course._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${course.courseName} is Approved!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
+  const handleCourseDenied = (course) => {
+    console.log(course)
+    fetch(`http://localhost:5000/courses/denied/${course._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${course.courseName} is Denied!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
   return (
     <>
       <section className="w-full my-12">
@@ -109,20 +153,30 @@ const ManageCourses = () => {
                         <div className="w-1/6">
                           <div className="flex">
                             <div className="tooltip" data-tip="Approve">
-                              <Link to={`/dashboard/payment/${course._id}`}>
-                                <button
-                                  onClick={() => setIsApproved(true)}
-                                  className="bg-[#ba68c8] hover:bg-[#703e78] text-white rounded"
-                                >
-                                  <FcAcceptDatabase className="h-8 w-8" />
-                                </button>
-                              </Link>
+                              {/* <Link to={`/dashboard/payment/${course._id}`}> */}
+                              <button
+                                onClick={() => handleCourseApproved(course)}
+                                disabled={course.courseStatus !== "pending"}
+                                className={`bg-[#ba68c8] hover:bg-[#703e78] text-white rounded ${
+                                  course.courseStatus !== "pending"
+                                    ? "opacity-50 cursor-not-allowed"
+                                    : "tooltip"
+                                }`}
+                              >
+                                <FcAcceptDatabase className="h-8 w-8" />
+                              </button>
+                              {/* </Link> */}
                             </div>
                             <div></div>
                             <div className="tooltip" data-tip="Deny">
                               <button
-                                onClick={() => setIsDenied(true)}
-                                className="bg-red-500 hover:bg-red-600 p-2 ml-3 text-white rounded"
+                                onClick={() => handleCourseDenied(course)}
+                                disabled={course.courseStatus !== "pending"}
+                                className={`bg-red-500 hover:bg-red-600 p-2 ml-3 text-white rounded ${
+                                  course.courseStatus !== "pending"
+                                    ? "opacity-50 cursor-not-allowed"
+                                    : "tooltip"
+                                }`}
                               >
                                 <GiCancel className="h-4 w-4" />
                               </button>

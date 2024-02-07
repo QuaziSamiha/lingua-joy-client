@@ -28,7 +28,7 @@ const AddCourse = () => {
       availableSeat: data.availableSeat,
       price: data.price,
     };
-    console.log(newCourse);
+    // console.log(newCourse);
     fetch(`http://localhost:5000/courses`, {
       method: "POST",
       headers: {
@@ -43,7 +43,8 @@ const AddCourse = () => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Courses Added. Current Status Pending. One of Our Admin will Verify Soon",
+          title:
+            "Courses Added. Current Status Pending. One of Our Admin will Verify Soon",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -107,13 +108,18 @@ const AddCourse = () => {
                       Course Time: <span className="text-red-600">*</span>
                     </span>
                   </label>
-                  <input
-                    type="text"
-                    value={"9:00 am - 11:00 am"}
-                    placeholder="course time..."
-                    className="outline-none  border p-2 rounded ml-1"
+                  <select
                     {...register("courseTime", { required: true })}
-                  />
+                    className="outline-none  border p-2 rounded ml-1"
+                  >
+                    <option value="11:00 am - 1:00 pm">
+                      11:00 am - 1:00 pm
+                    </option>
+                    <option value="9:00 am - 11:00 am">
+                      9:00 am - 11:00 am
+                    </option>
+                    <option value="4:00 pm - 6:00 pm">4:00 pm - 6:00 pm</option>
+                  </select>
                   {errors.courseTime && (
                     <p className="text-xs text-red-500">
                       This field is required
@@ -126,13 +132,38 @@ const AddCourse = () => {
                       Course Day: <span className="text-red-600">*</span>
                     </span>
                   </label>
-                  <input
-                    type="text"
-                    placeholder="course day . . ."
-                    value={"Thursday, Sunday, Tuesday"}
-                    className="outline-none border p-2 rounded ml-1"
+                  <select
                     {...register("courseDay", { required: true })}
-                  />
+                    className="outline-none border p-2 rounded ml-1"
+                  >
+                    <option value="Monday, Tuesday, Wednesday">
+                      Monday, Tuesday, Wednesday
+                    </option>
+                    <option value="Monday, Tuesday, Thursday">
+                      Monday, Tuesday, Thursday
+                    </option>
+                    <option value="Monday, Tuesday, Friday">
+                      Monday, Tuesday, Friday
+                    </option>
+                    <option value="Monday, Tuesday, Saturday">
+                      Monday, Tuesday, Saturday
+                    </option>
+                    <option value="Monday, Tuesday, Sunday">
+                      Monday, Tuesday, Sunday
+                    </option>
+                    <option value="Monday, Wednesday, Thursday">
+                      Monday, Wednesday, Thursday
+                    </option>
+                    <option value="Friday, Saturday, Sunday">
+                      Friday, Saturday, Sunday
+                    </option>
+                    <option value="Tuesday, Wednesday, Friday">
+                      Tuesday, Wednesday, Friday
+                    </option>
+                    <option value="Monday, Thursday, Saturday">
+                      Monday, Thursday, Saturday
+                    </option>
+                  </select>
                   {errors.courseDay && (
                     <p className="text-xs text-red-500">
                       This field is required

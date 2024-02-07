@@ -1,18 +1,12 @@
-/* eslint-disable no-unused-vars */
-import { Link } from "react-router-dom";
 import useCourse from "../../../../hooks/useCourse";
 import photo from "../../../../assets/images/instructor/ins1.jpg";
 import { GiCancel } from "react-icons/gi";
 import { FcAcceptDatabase } from "react-icons/fc";
-import { useState } from "react";
 import Swal from "sweetalert2";
 
 const ManageCourses = () => {
-  // eslint-disable-next-line no-unused-vars
   const [courses, refetch, isLoading] = useCourse();
   // console.log(courses);
-  // const [isApproved, setIsApproved] = useState(false);
-  // const [isDenied, setIsDenied] = useState(false);
 
   if (isLoading) {
     return (
@@ -47,7 +41,7 @@ const ManageCourses = () => {
   };
 
   const handleCourseDenied = (course) => {
-    console.log(course)
+    console.log(course);
     fetch(`http://localhost:5000/courses/denied/${course._id}`, {
       method: "PATCH",
     })
@@ -153,7 +147,6 @@ const ManageCourses = () => {
                         <div className="w-1/6">
                           <div className="flex">
                             <div className="tooltip" data-tip="Approve">
-                              {/* <Link to={`/dashboard/payment/${course._id}`}> */}
                               <button
                                 onClick={() => handleCourseApproved(course)}
                                 disabled={course.courseStatus !== "pending"}
@@ -165,7 +158,6 @@ const ManageCourses = () => {
                               >
                                 <FcAcceptDatabase className="h-8 w-8" />
                               </button>
-                              {/* </Link> */}
                             </div>
                             <div></div>
                             <div className="tooltip" data-tip="Deny">

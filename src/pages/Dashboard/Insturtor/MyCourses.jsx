@@ -1,14 +1,27 @@
+import { useContext } from "react";
 import useCourse from "../../../hooks/useCourse";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 
 const MyCourses = () => {
-  const [courses, isLoading] = useCourse()
-  console.log(courses)
-  // fetch(`http://localhost:5000/courses`, {
+  const [courses, isLoading] = useCourse();
+  // console.log(courses);
+  const { user } = useContext(AuthContext);
+  // console.log(user.email);
+  if (courses.length == 0 && isLoading) {
+    return (
+      <div className="flex justify-center items-center mt-16">
+        <span className="loading loading-ring loading-xs"></span>
+        <span className="loading loading-ring loading-sm"></span>
+        <span className="loading loading-ring loading-md"></span>
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
+  }
 
-  // })
-  // .then(res => res.json())
-  // .then(data => console.log(data))
-  // .catch(error => console.log(error))
+  const instructorCourses = courses.filter(
+    (course) => course.instructorEmail == user.email
+  );
+  console.log(instructorCourses);
 
   return (
     <>
@@ -31,50 +44,44 @@ const MyCourses = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>1</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                        <p className="text-xs">Available Seat: 30</p>
-                      </div>
-                    </td>
-                    <td className="text-green-500">Approved</td>
-                    <td className="">5</td>
-                    <td></td>
-                  </tr>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>2</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                        <p className="text-xs">Available Seat: 30</p>
-                      </div>
-                    </td>
-                    <td className="text-red-500">Denied</td>
-                    <td className="">0</td>
-                    <td>
-                      <p>Lack of Information</p>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#e1e4e9] font-medium">
-                    <th>3</th>
-                    <td>
-                      <div>
-                        <p className="text-lg">Enlish Learning Class</p>
-                        <p className="text-xs">10:30 am - 11:30 am</p>
-                        <p className="text-xs">Tuesday, Thursday, Saturday</p>
-                        <p className="text-xs">Available Seat: 30</p>
-                      </div>
-                    </td>
-                    <td className="text-orange-500">Pending</td>
-                    <td className="">0</td>
-                    <td></td>
-                  </tr>
+                  {instructorCourses.map((course, index) => (
+                    // <div key={course._id}>
+                    // {" "}
+                    <tr
+                      key={course._id}
+                      className="hover:bg-[#e1e4e9] font-medium"
+                    >
+                      <th>{index + 1}</th>
+                      <td>
+                        <div>
+                          <p className="text-lg">{course.courseName}</p>
+                          <p className="text-xs">{course.courseTime}</p>
+                          <p className="text-xs">{course.courseDay}</p>
+                          <p className="text-xs">Price: ${course.price}</p>
+                          <p className="text-xs">
+                            Available Seat:{" "}
+                            {course.availableSeat - course.totalStudent}
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        className={`capitalize ${
+                          course.courseStatus === "Pending"
+                            ? "text-orange-600"
+                            : course.courseStatus === "denied"
+                            ? "text-red-600"
+                            : course.courseStatus === 'approved'
+                            ? "text-green-600"
+                            : ""
+                        }`}
+                      >
+                        {course.courseStatus}
+                      </td>
+                      <td className="">{course.totalStudent}</td>
+                      <td></td>
+                    </tr>
+                    // </div>
+                  ))}
                 </tbody>
               </table>
             </div>

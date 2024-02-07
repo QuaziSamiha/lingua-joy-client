@@ -1,61 +1,47 @@
-import { useContext, useState } from "react";
-import { InstructorContext } from "../../../providers/InstructorContext/InstructorContext";
-import BriefInfo from "../BriefInfo/BriefInfo";
-import Pagination from "../../../components/Pagination/Pagination";
+import useUsers from "../../../hooks/useUsers";
 
 const Instructors = () => {
-  const { allInstructors } = useContext(InstructorContext);
-  // console.log(allInstructors);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
-
-  // Calculate the range of instructors to display for the current page
-  const indexOfLastInstructor = currentPage * itemsPerPage;
-  const indexOfFirstInstructor = indexOfLastInstructor - itemsPerPage;
-  const currentInstructors = allInstructors.slice(
-    indexOfFirstInstructor,
-    indexOfLastInstructor
+  const [allUsers] = useUsers();
+  // console.log(allUsers);
+  const allInstructors = allUsers.filter(
+    (user) => user.userRole === "insturctor"
   );
-
-  // Change page
-  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
-
+  // console.log(allInstructors);
   return (
-    <section>
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Teaching Language</th>
-              <th>Total Students</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* {allInstructors.map((instructor) => (
-              <BriefInfo key={instructor.id} instructor={instructor} />
-            ))} */}
-            {allInstructors
-              .slice(indexOfFirstInstructor, indexOfLastInstructor)
-              .map((instructor) => (
-                <BriefInfo key={instructor.id} instructor={instructor} />
-              ))}
-          </tbody>
-          {/* foot */}
-          <tfoot>
-            <div className="text-center py-8 w-full">
-              <Pagination
-                currentPage={currentPage}
-                totalPages={Math.ceil(allInstructors.length / itemsPerPage)}
-                onPageChange={handlePageChange}
-              />
-            </div>
-          </tfoot>
-        </table>
-      </div>
-    </section>
+    <>
+      <section className="mx-4 lg:mx-16 ">
+        <div className="my-16 text-[#703e78] text-center">
+          <h1 className="text-xl lg:text-3xl font-bold ">Meet Our Multilingual Experts</h1>
+          <h2 className="font-semibold mt-4 text-xs lg:text-sm">Embark on a Linguistic Journey with Our Seasoned Instructors</h2>
+        </div>
+        <div className="my-24 mx-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+            {allInstructors.map((instructor) => (
+              <div
+                key={instructor._id}
+                className="border rounded"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
+                <div className="m-3">
+                  <div className="flex justify-center">
+                    <img
+                      src={instructor.userPhoto}
+                      className="w-32 h-32 rounded"
+                      alt=""
+                    />
+                  </div>
+                  <div className="mt-4 text-center text-[#703e78]">
+                    <p className="font-bold">{instructor.userName}</p>
+                    <p className="font-semibold">{instructor.userEmail}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -91,7 +91,7 @@ const Dashboard = () => {
             ) : currentUserInfo.userRole === "insturctor" ? (
               <>
                 <li>
-                  <Link to="/dashboard/home">
+                  <Link to="/dashboard/instructor/home">
                     <FaHome className="w-4 h-4" /> Instructor Home
                   </Link>
                 </li>

@@ -180,6 +180,9 @@ const ManageCourses = () => {
                     </tr>
                   ))}
                 </tbody>
+                <tfoot>
+                  {/* TODO: pagination */}
+                </tfoot>
               </table>
             </div>
           </div>

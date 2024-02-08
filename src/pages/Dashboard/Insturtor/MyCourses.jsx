@@ -26,7 +26,7 @@ const MyCourses = () => {
   return (
     <>
       <section className="w-full">
-        <div className="mx-16">
+        <div className="mx-16 my-12">
           <div className="bg-[#ba68c8] py-4 rounded-t-lg font-bold leading-3 text-white">
             <h1 className="text-2xl pl-4">Total Course: {7}</h1>
           </div>
@@ -77,12 +77,15 @@ const MyCourses = () => {
                       >
                         {course.courseStatus}
                       </td>
-                      <td className="">{course.totalStudent}</td>
-                      <td></td>
+                      <td className="text-center">{course.totalStudent}</td>
+                      <td className="text-sm text-pink-500">Upcoming Features...</td>
                     </tr>
                     // </div>
                   ))}
                 </tbody>
+                <tfoot>
+                  {/* TODO: Pagination */}
+                </tfoot>
               </table>
             </div>
           </div>

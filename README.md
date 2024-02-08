@@ -8,7 +8,7 @@ postcss.config.js == used for tailwind css framework
 tailwind.config.js = used for configuration of tailwind css framework
 vite.config.js = used for configuration of vite
 
-index.html = it call main.jsx
+index.html = it calls main.jsx
 
 firebase folder = firbase.config.js = it contains all authentication information
 
@@ -53,7 +53,7 @@ Note: Do not enforce forget password feature and  the email verification method,
 5. Homepage:
     - Top Slider Section  Will have a relevant slider. Use relevant text, information, message, and picture. The design is entirely up to you.
     - Popular Classes Section  Show relevant pictures related to the classes or activities. Have the top 6 classes based on the number of students.
-    - Popular Instructors Section  Show relevant pictures related to the instructors. Show the top 6 instructors based on the number of students in their Class. However, selecting top instructors based on the number of students is optional, but you must show 6 instructors.
+    - Popular Instructors Section. Show the top 6 instructors based on the number of students in their Class. 
     - Extra Section Add one relevant sections. Make it attractive :heart_eyes:. Try to use animation effects.
 
 6. Instructors Page:
@@ -180,22 +180,4 @@ writing_hand: Optional Task
 8. (optional) Updated button Action: An instructor can update a Class information. You can show the form either in a modal or in another route. The update button will be disabled if the status is approved.
 
 9. Manage Students: On the Manage Classes, there will be a button called show students. Clicking on that link will take an admin to a route where the admin will see students for a particular class. An admin will be able to kick out a student from a class. 
-
-pushpin: What to submit
-- Your client-side code GitHub repository
-- Your server-side code GitHub repository
-- Your live website link
-- Admin email and password.
-
-page_with_curl: Some Guidelines
-1. Do not waste much time on the website idea. Just spend 20-30 minutes deciding, find a sample website, and start working on it.
-2. Do not waste much time finding the right image. You can always start with a simple idea. Make the website and then add different images.
-3. Don't look at the overall task list. Just take one task at a time and do it. Once it's done, pick the next task. If you get stuck on a particular job, move on to the next lesson.
-4. Stay calm, think before coding, and work sequentially. You will make it.
-5. Be strategic about the electricity issue.
-6. Use ChatGPT to generate JSON data. You can use chatGPT for other purposes as well.
-
-
-Earn your Reward:
-The greatest joys of life aren't gifted; they're earned.
 

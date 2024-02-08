@@ -37,34 +37,34 @@ const CoursePrerequisite = () => {
       <section
         className="my-8 bg-[#fafafa] w-full "
         data-aos="fade-up-right"
-        data-aos-duration="3000" // Animation duration in milliseconds
+        data-aos-duration="2000" // Animation duration in milliseconds
       >
         <h1
-          className="text-[#703e78] font-bold text-2xl text-center"
+          className="text-[#703e78] font-bold mt-2 lg:mt-0 text-xl lg:text-2xl text-center"
           data-aos="fade-up-right"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
         >
           Before You Begin
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8 mx-3">
           {requirements.map((requirement, index) => (
             <div key={index} className="">
               <div
                 className="bg-[#fafafa] text-[#703e78] h-28 rounded-lg shadow-lg shadow-[#dcb3e4]"
                 data-aos="fade-up-right"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <h1
                   className="text-center font-semibold pt-2"
                   data-aos="fade-up-right"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   {requirement.title}
                 </h1>
                 <p
                   className="text-xs text-justify px-4 py-1"
                   data-aos="fade-up-right"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   {requirement.description}
                 </p>

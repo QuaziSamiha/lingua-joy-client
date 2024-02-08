@@ -11,9 +11,6 @@ const CourseCard = ({ course }) => {
     availableSeat,
     price,
   } = course;
-  //   console.log(courseImage);
-  // const currentAvailableSeat = availableSeat - totalStudent;
-  //   console.log(availableSeat)
 
   return (
     <div data-aos="fade-up" data-aos-duration="2000">
@@ -22,29 +19,29 @@ const CourseCard = ({ course }) => {
           availableSeat === 0 ? "bg-red-600" : "bg-[#fafafa]"
         } rounded-lg shadow-lg`}
       >
-        <div className="flex justify-center ">
+        <div className="flex justify-center p-4">
           <img
             src={courseImage}
             alt=""
-            className="w-full m-6 rounded-md h-48"
+            className="w-full rounded-md h-48"
           />
         </div>
         <div
-          className={`mx-6 ${
+          className={`mx-4 lg:mx-6 ${
             availableSeat === 0 ? "text-white" : "text-[#703e78]"
           }`}
         >
-          <p className=" text-xl mb-1 font-bold leading-relaxed">{courseName}</p>
-          <p className="mb-1">
+          <p className="lg:text-xl mb-1 font-bold leading-relaxed">{courseName}</p>
+          <p className="mb-1 text-sm">
             Conducted by{" "}
-            <span className="text-lg font-semibold">{instructorName}</span>
+            <span className="lg:text-lg font-semibold">{instructorName}</span>
           </p>
-          <div className="flex justify-between">
+          <div className="flex justify-between text-sm">
             <p>Available Seat: {availableSeat}</p>
             <p>Fee: ${price}</p>
           </div>
         </div>
-        <div className="mx-6 text-white text-center">
+        <div className="mx-4 lg:mx-6 text-white text-center">
           <Link to={`/course/${_id}`}>
             <button
               className={`w-full  my-4 py-2 rounded-md ${

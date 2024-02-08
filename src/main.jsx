@@ -8,7 +8,9 @@ import AOS from "aos";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import router from "./routes/Routes";
 import AuthProvider from "./providers/AuthProvider/AuthProvider";
-// ENTRY POINT OF REACT
+// main.jsx -- ENTRY POINT OF REACT
+
+// used for animation
 AOS.init({
   // Global settings here
 });

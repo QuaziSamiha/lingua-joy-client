@@ -1,4 +1,3 @@
-// import img from "../../../assets/images/courseImages/10.jpg";
 import Banner from "../../../components/Shared/Banner/Banner";
 import CourseOutline from "./CourseOutline";
 import { FaHeartCircleCheck } from "react-icons/fa6";
@@ -59,7 +58,7 @@ const CourseDetail = () => {
         .then((data) => {
           console.log(data);
           if (data.insertedId) {
-            refetchCart
+            refetchCart;
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -77,50 +76,54 @@ const CourseDetail = () => {
   return (
     <>
       <Banner />
-      <section className="w-[1180px] mx-auto my-16">
-        <div className="md:flex justify-evenly gap-28">
-          <div className="w-2/3">
+      <section className="lg:w-[1180px] lg:mx-auto my-16">
+        <div className="md:flex justify-evenly lg:gap-28">
+          <div className="ml-8 lg:w-2/3">
             <div className=" text-[#703e78]">
-              <div className="flex justify-between items-center">
-                <p className=" text-3xl leading-2 font-bold mb-1">
+              <div className="ml-4 lg:ml-0 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
+                <p className=" lg:text-3xl leading-2 font-bold mb-1">
                   {courseName}
                 </p>
-                <div className="flex justify-evenly items-center bg-[#ba68c8] text-white hover:bg-[#703e78] ">
+                <div className="w-fit mb-3 lg:mb-0 flex justify-evenly items-center bg-[#ba68c8] text-white hover:bg-[#703e78] ">
                   <button
                     onClick={handleAddToFavourite}
-                    className="w-full text-lg py-2 rounded mx-1 outline-none"
+                    className="lg:w-full lg:text-lg py-2 rounded mx-1 outline-none"
                   >
                     Add to Favourite
                   </button>
                   <FaHeartCircleCheck className="w-6 h-6 pr-1" />
                 </div>
               </div>
-              <p className="text-lg mb-1">
-                <span className="font-bold"> Instructor Name:</span>{" "}
-                <span className="font-semibold">{instructorName}</span>
-              </p>
-              <p className="text-lg mb-1">
-                <span className="font-bold">Course Duration:</span>{" "}
-                <span className="font-semibold"> 3 weeks </span>
-              </p>
-              <p className="text-lg mb-1">
-                <span className="font-bold">Time:</span>{" "}
-                <span className="font-semibold">{courseTime}</span>
-              </p>
-              <p className="text-lg mb-1">
-                <span className="font-bold"> Schedule:</span>{" "}
-                <span className="font-semibold">{courseDay}</span>{" "}
-              </p>
-              <p className="text-lg mb-1">
-                <span className="font-bold">Available Seats:</span>{" "}
-                <span className="font-semibold">
-                  {availableSeat - totalStudent}
-                </span>
-              </p>
-              <p className="text-lg mb-1">
-                <span className="font-bold">Price:</span>{" "}
-                <span className="font-semibold">{price}</span>
-              </p>
+              <div className="ml-4 lg:ml-0 lg:text-lg">
+                <p className="mb-1">
+                  <span className="font-bold"> Instructor:</span>{" "}
+                  <span className="font-semibold">{instructorName}</span>
+                </p>
+                <p className="mb-1">
+                  <span className="font-bold">Course Duration:</span>{" "}
+                  <span className="font-semibold"> 3 weeks </span>
+                </p>
+                <p className="mb-1">
+                  <span className="font-bold">Time:</span>{" "}
+                  <span className="font-semibold">{courseTime}</span>
+                </p>
+                <p className="mb-1">
+                  <span className="font-bold"> Schedule:</span>{" "}
+                  <span className="font-semibold">{courseDay}</span>{" "}
+                </p>
+                <p className="mb-1">
+                  <span className="font-bold">Available Seats:</span>{" "}
+                  <span className="font-semibold">{availableSeat}</span>
+                </p>
+                <p className="mb-1">
+                  <span className="font-bold">Enrolled Students:</span>{" "}
+                  <span className="font-semibold">{totalStudent}</span>
+                </p>
+                <p className="mb-1">
+                  <span className="font-bold">Price:</span>{" "}
+                  <span className="font-semibold"> $ {price}</span>
+                </p>
+              </div>
             </div>
             <div>
               <CoursePrerequisite />
@@ -128,19 +131,19 @@ const CourseDetail = () => {
               <QuestionAnswer />
             </div>
           </div>
-          <div className="w-1/3  bg-[#ba68c8]">
+          <div className="mx-3 lg:mx-0 lg:w-1/3  bg-[#ba68c8]">
             <div className="my-4">
-              <div className="flex justify-center mx-6">
+              <div className="flex justify-center py-3 mx-2 lg:mx-6">
                 <img
                   src={courseImage}
                   alt=""
                   className="rounded-md"
                   data-aos="fade-up-right"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 />
               </div>
-              <div className="text-white my-6 ml-6">
-                <CourseOutline courseName={"English"} />
+              <div className="text-white my-6 ml-1 mr-1 lg:ml-6">
+                <CourseOutline courseName={courseName} />
               </div>
             </div>
           </div>

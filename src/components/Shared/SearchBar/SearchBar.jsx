@@ -6,14 +6,13 @@ const SearchBar = () => {
         <div>
           <div>
             <input
-              className="input input-bordered join-item w-[500px]"
+              className="input input-bordered join-item text-sm lg:text-lg lg:w-[500px]"
               placeholder="Search by Language..........."
             />
           </div>
         </div>
         <div className="indicator">
-          <span className="indicator-item badge badge-secondary">new</span>
-          <button className="btn join-item bg-[#ba68c8] text-white w-[100px] text-lg">
+          <button className="btn join-item bg-[#ba68c8] text-white lg:w-[100px] text-sm lg:text-lg">
             Search
           </button>
         </div>

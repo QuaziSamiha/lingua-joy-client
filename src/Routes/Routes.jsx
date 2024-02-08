@@ -17,6 +17,7 @@ import MyCourses from "../pages/Dashboard/Insturtor/MyCourses";
 import PrivateRoute from "./PrivateRoute";
 import ManageCourses from "../pages/Dashboard/Admin/ManageCourses/ManageCourses";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -67,12 +68,16 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "admin/home",
+        element: <AdminHome />,
+      },
+      {
         path: "manageCourses",
         element: <ManageCourses />,
       },
       {
-        path: 'manageUsers',
-        element: <ManageUsers />
+        path: "manageUsers",
+        element: <ManageUsers />,
       },
       // ---------------------------FOR INSTRUCTOR------------------------------
       {

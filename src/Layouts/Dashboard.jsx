@@ -50,7 +50,7 @@ const Dashboard = () => {
           {/* <Footer /> */}
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className="btn btn-[#703e78] drawer-button lg:hidden"
           >
             Click
           </label>
@@ -70,7 +70,7 @@ const Dashboard = () => {
             {currentUserInfo.userRole === "admin" ? (
               <>
                 <li>
-                  <Link to="/dashboard/home">
+                  <Link to="/dashboard/admin/home">
                     <FaHome className="w-4 h-4" />
                     Admin Home
                   </Link>

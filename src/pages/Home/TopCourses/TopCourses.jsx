@@ -5,7 +5,7 @@ import CourseCard from "../CourseCard/CourseCard";
 
 const TopCourses = () => {
   const [topCourses, setTopCourses] = useState([]);
-  const [courses, refetch, isPending, isLoading, isError] = useCourse();
+  const [courses] = useCourse();
   //   console.log(courses);
 
   useEffect(() => {
@@ -21,14 +21,14 @@ const TopCourses = () => {
     <>
       <section className="my-24 py-8 bg-[#fafafa]">
         <div>
-          <h1 className="uppercase text-center text-[#703e78] text-2xl font-bold mb-4">
+          <h1 className="uppercase text-center text-[#703e78] text-lg lg:text-2xl font-bold mb-4">
             Prime Picks
           </h1>
-          <p className="text-center text-[#ba68c8] font-medium text-lg">
+          <p className="text-center text-[#ba68c8] font-medium text-xs lg:text-lg">
             Explore Excellence | Learn and Lead | Featured Courses
           </p>
         </div>
-        <section className="my-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-9/12 mx-auto">
+        <section className="my-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 xl:w-9/12 xl:mx-auto">
           {topCourses.map((topCourse) => (
             <CourseCard key={topCourse.courseId} topCourse={topCourse} />
           ))}

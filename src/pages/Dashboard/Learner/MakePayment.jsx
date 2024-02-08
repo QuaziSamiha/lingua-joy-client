@@ -23,7 +23,7 @@ const MakePayment = () => {
     console.log(course);
     if (user && user.email) {
       const addingCourse = { ...course };
-      // console.log(addingCourse)
+      console.log(addingCourse)
       fetch(`http://localhost:5000/enrolledCourses`, {
         method: "POST",
         headers: {

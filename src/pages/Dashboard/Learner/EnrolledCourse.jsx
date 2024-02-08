@@ -7,8 +7,8 @@ const EnrolledCourse = () => {
 
   return (
     <>
-      <section className=" w-full ">
-        <div className="lg:mx-16">
+      <section className="w-full ">
+        <div className="lg:mx-16 my-12">
           <div className="bg-[#ba68c8] py-4 rounded-t-lg font-bold leading-3 text-white">
             <h1 className="text-2xl pl-4">Total Course: {enrolledCourses.length}</h1>
           </div>

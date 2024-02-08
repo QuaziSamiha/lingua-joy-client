@@ -11,6 +11,7 @@ import { Link, Outlet } from "react-router-dom";
 import useUsers from "../hooks/useUsers";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
+import image from "../assets/images/others/Education-amico.png";
 // import Footer from '../components/Shared/Footer/Footer'
 
 const Dashboard = () => {
@@ -46,6 +47,11 @@ const Dashboard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
+          <div className="flex justify-center items-center">
+            <div className="w-[400px] h-[400px]">
+              <img src={image} alt="" />
+            </div>
+          </div>
           <Outlet />
           {/* <Footer /> */}
           <label
@@ -111,7 +117,7 @@ const Dashboard = () => {
             ) : (
               <>
                 <li>
-                  <Link to="/dashboard/home">
+                  <Link to="/dashboard/learner/home">
                     {" "}
                     <FaHome className="w-4 h-4" />
                     Learner Home

@@ -19,6 +19,7 @@ import ManageCourses from "../pages/Dashboard/Admin/ManageCourses/ManageCourses"
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 import InstructorHome from "../pages/Dashboard/Insturtor/InstructorHome";
+import LearnerHome from "../pages/Dashboard/Learner/LearnerHome";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -82,8 +83,8 @@ const router = createBrowserRouter([
       },
       // ---------------------------FOR INSTRUCTOR------------------------------
       {
-        path: 'instructor/home',
-        element: <InstructorHome />
+        path: "instructor/home",
+        element: <InstructorHome />,
       },
       {
         path: "addcourse",
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
         element: <MyCourses />,
       },
       // --------------FOR LEARNER-----------------------
+      {
+        path: "learner/home",
+        element: <LearnerHome />,
+      },
       {
         path: "selectedcourses",
         element: <SelectedCourse />,

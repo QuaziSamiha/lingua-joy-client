@@ -20,40 +20,46 @@ firebase folder = firbase.config.js = it contains all authentication information
 3. Navbar
 Your website should have a navbar with the Website logo or Website name, Home, Instructors,  Classes, Dashboard and User profile picture. The user profile picture and Dashboard on the navbar are conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the Login button.
 
-4. Registration & Login System:
-    Login Page:
-    When a user clicks on the login button, they will be redirected to the login page having the following:
+4. Error Page
+Create a 404 page. Add any interesting image animation & a back-to-home button on the 404 page. Do not add header & footer in this page.
+
+4. Registration(Sign Up) & Login(Sign In) System:
+    Login / Sign In Page:
+    When a user clicks on the Dashborad navlink or course Details button, they will be redirected to the login page having the following:
     - Email
     - Password (This field can hide/unhide the password by clicking on an icon)
+    - A user cannot submit empty email and password fields.
     - A link that will redirect to the registration page
-    - Keep at least one social login
-    Registration Page:
+    - At least one social login
+    Registration / Sign Up Page:
     The Registration page will have the Email/Password form having the following fields:
     - Name
     - Email
     - Password
-    - Confirm Password
+    - Confirm Password (TODO: Future Features)
     - Photo URL
-    - (optional) Gender
-    - (optional) Phone Number
-    - (optional) Address
-    Note: Keep at least one social login
+    - At least one social login (Google Login)
+    TODO: Future Features
+    - Gender
+    - Phone Number
+    - Address
+    
+TODO: Future Feature -- enforce forget password feature and  the email verification method
 
-Note: Do not enforce forget password feature and  the email verification method, as it will inconvenience the examiner. If you want, you can add email verification/forget the password after receiving the assignment result.
+TODO: Future Features
+Error for Registration system:
+On the Registration page, display errors when:
+The password
+- is less than 6 characters
+- don't have a capital letter
+- don't have a special character
 
-    Error for Registration system:
-    On the Registration page, display errors when:
-    The password
-    - is less than 6 characters
-    - don't have a capital letter
-    - don't have a special character
-
-   Note: A user cannot submit empty email and password fields.
 
 5. Homepage:
     - Top Slider Section  Will have a relevant slider. Use relevant text, information, message, and picture. The design is entirely up to you.
     - Popular Classes Section  Show relevant pictures related to the classes or activities. Have the top 6 classes based on the number of students.
     - Popular Instructors Section. Show the top 6 instructors based on the number of students in their Class. 
+    TODO: Future Features
     - Extra Section Add one relevant sections. Make it attractive :heart_eyes:. Try to use animation effects.
 
 6. Instructors Page:
@@ -67,17 +73,20 @@ TODO : FUTURE FEATURES
    - `See Classes` button to show classes by this Instructor. This will take to a new link
    - PAGINATION - will be applied
 
-7. Classes page:
+7. Courses Page:
 Show all approved classes on this page. Each Class will have the following:
    - Image
    - Name
    - Instructor name
    - Available seats
    - Price
-   - Select Button. If the user is not logged in, then tell the user to log in before selecting the course. This button will be disabled if:
+   - Details Button. If the user is not logged in, then tell the user to log in before selecting the course. 
+   - The class card background will be red if the available seats are 0.
+   TODO: Future Features
+   - This button will be disabled if:
         - Available seats are 0
         - Logged in as admin/instructor
-    - The class card background will be red if the available seats are 0.
+   
 
 8. Student Dashboard:
     It will be private & only a student can access this route.
@@ -87,8 +96,6 @@ Show all approved classes on this page. Each Class will have the following:
 9. Payment: (Student Dashboard)
     - Pay button Action: Upon clicking the Pay button for a Class on the My Selected Classes, the student will be redirected to the payment page to finalize their payment. After a successful payment, the Available seats for the particular Class will be reduced by 1. The Class information will be shown on the My Enrolled Classes page and removed from the My Selected Classes page.
     - Create a payment history page for students. It will show the payment made by that student. Make sure to sort the payment history descending. The newest payment will be at the top
-
-
 
 10.  Instructor Dashboard:
     It will be private & only an instructor can access this route.
@@ -130,21 +137,15 @@ writing_hand: Bonus Task:
     - Used packages/ technology name
     - Live site link
 
+5. Uses [tanstack-query] or [react-query] 
+7.  Used [react-hook-form]
+
+<!-- TODO: Future Features -->
 3. Implementing a dark/light theme toggle for the home page. It's optional to implement the theme toggle for the entire website.
+6. will be used Axios for at least two calls.
+8. will be Used the Environment variables both on the client side & server side.
+9. wil be Implemented JWT token for Login and Registration systems (Email/ password & social login). I will send the token for the Dashboard routes and verify the user.
 
-4. Make the home page responsive. If possible, Make your entire website responsive\. (It is ok if the table is not responsive\.) 
-
-5. Use tanstack query (react-query) in at least two places. If needed, you can use it everywhere. 
-
-6. use Axios for at least two calls.
-
-7.  Must Use [react-hook-form](https://react-hook-form.com/) in the registration & login page. Using react hook form in another place is optional.
-
-8. Use the Environment variables both on the client side & server side.
-
-9. Implement  JWT token for Login and Registration systems (Email/ password & social login)\. You will send the token for the Dashboard routes and verify the user\.
-
-10. Create a 404 page. Add any interesting image animation & a back-to-home button on the 404 page. Do not add header & footer in this page.
 
 writing_hand: Optional Task
 

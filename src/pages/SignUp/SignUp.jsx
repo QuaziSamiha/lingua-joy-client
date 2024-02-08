@@ -41,7 +41,7 @@ const SignUp = () => {
           userEmail: data.email,
           userPhoto: data.photoURL,
           // isAdmin: false,
-          userRole: 'normal'
+          userRole: "normal",
         };
         // console.log(newUser);
         fetch(`http://localhost:5000/users`, {
@@ -107,8 +107,8 @@ const SignUp = () => {
   return (
     <>
       <section className="mt-16 mb-24">
-        <div className="flex justify-around items-center">
-          <div className="w-[500px] h-[600px]">
+        <div className="flex flex-col-reverse lg:flex-row lg:justify-around lg:items-center">
+          <div className="lg:w-[500px] lg:h-[600px]">
             <h1 className="text-center font-bold text-3xl uppercase text-[#37474f]">
               Sign up
             </h1>
@@ -216,8 +216,10 @@ const SignUp = () => {
               </Link>
             </div>
           </div>
-          <div className="w-[500px] h-[500px]">
-            <img src={image} alt="" />
+          <div className="flex justify-center items-center mb-12 lg:mb-0">
+            <div className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
+              <img src={image} alt="" />
+            </div>
           </div>
         </div>
       </section>

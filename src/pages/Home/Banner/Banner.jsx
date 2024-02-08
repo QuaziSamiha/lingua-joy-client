@@ -56,13 +56,13 @@ function ban() {
                 <img
                   src={content.image}
                   alt="absolute"
-                  className="w-2/3 h-[500px] mb-8"
+                  className="w-2/3 h-[300px] lg:h-[500px] mb-8"
                 />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-                  <h1 className="text-6xl font-bold text-[#703e78]">
+                  <h1 className="text-xl lg:text-4xl xl:text-6xl font-bold text-[#703e78]">
                     {content.title}
                   </h1>
-                  <h2 className="text-2xl text-[#ba68c8] mt-4 font-semibold">
+                  <h2 className="text-sm lg:text-xl xl:text-2xl text-[#ba68c8] mt-2 lg:mt-4 font-semibold">
                     {content.subTitle}
                   </h2>
                 </div>

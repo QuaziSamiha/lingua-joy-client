@@ -15,13 +15,17 @@ firebase folder = firbase.config.js = it contains all authentication information
 <!-- you should learn -->
 1. DOM manipulatino of javascript
 
-2. Make sure to keep the navbar and footer on all the pages except on the 404 page. Create a good, stylish, and meaningful footer. (including website logo or name or both, copyright, some contact information, Address etc.)
+2. Navbar and Footer on all the pages except on the 404 page. 
+
+4. Footer
+Including website logo or name or both, copyright, some contact information, Address etc.
 
 3. Navbar
-Your website should have a navbar with the Website logo or Website name, Home, Instructors,  Classes, Dashboard and User profile picture. The user profile picture and Dashboard on the navbar are conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the Login button.
+a navbar with the Website logo or Website name, Home, Instructors, courses, Dashboard and User profile picture, sign out button or join us button. The user profile picture and sign out button or join us button are conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the 'Join Us' button.
 
 4. Error Page
-Create a 404 page. Add any interesting image animation & a back-to-home button on the 404 page. Do not add header & footer in this page.
+it contains a 404 page. Added interesting image & a back-to-home button on the 404 page.
+Not added header & footer in this page.
 
 4. Registration(Sign Up) & Login(Sign In) System:
     Login / Sign In Page:
@@ -30,7 +34,7 @@ Create a 404 page. Add any interesting image animation & a back-to-home button o
     - Password (This field can hide/unhide the password by clicking on an icon)
     - A user cannot submit empty email and password fields.
     - A link that will redirect to the registration page
-    - At least one social login
+    - At least one social login (Google)
     Registration / Sign Up Page:
     The Registration page will have the Email/Password form having the following fields:
     - Name
@@ -57,7 +61,7 @@ The password
 
 5. Homepage:
     - Top Slider Section  Will have a relevant slider. Use relevant text, information, message, and picture. The design is entirely up to you.
-    - Popular Classes Section  Show relevant pictures related to the classes or activities. Have the top 6 classes based on the number of students.
+    - Popular Courses Section  Show relevant pictures related to the classes or activities. Have the top 6 classes based on the number of students.
     - Popular Instructors Section. Show the top 6 instructors based on the number of students in their Class. 
     TODO: Future Features
     - Extra Section Add one relevant sections. Make it attractive :heart_eyes:. Try to use animation effects.

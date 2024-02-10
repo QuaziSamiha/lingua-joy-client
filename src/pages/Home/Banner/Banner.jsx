@@ -8,7 +8,7 @@ import ban6 from "../../../assets/images/banner/6.jpg";
 import ban5 from "../../../assets/images/banner/8.jpg";
 import ban7 from "../../../assets/images/banner/9.jpg";
 
-function ban() {
+function Banner() {
   const bannerContent = [
     {
       image: ban7,
@@ -49,7 +49,7 @@ function ban() {
   return (
     <>
       <section>
-        <Carousel autoPlay="true" className="" showThumbs={false}>
+        <Carousel autoPlay="true" showThumbs={false}>
           {bannerContent.map((content, index) => (
             <div key={index} className="relative">
               <div className="">
@@ -75,4 +75,4 @@ function ban() {
   );
 }
 
-export default ban;
+export default Banner;

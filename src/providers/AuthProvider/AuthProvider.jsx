@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { app } from "../../firebase/firebase.config";
 
+// here we are using Context API
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
@@ -19,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
 
+  // used in sign up page
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -29,11 +31,13 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  // used in sign in page
   const userLogin = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // used in sign up page
   const updateUserProfile = (name, photo) => {
     // console.log(name, photo)
     updateProfile(auth.currentUser, {

@@ -5,9 +5,12 @@ import CourseCard from "../CourseCard/CourseCard";
 
 const TopCourses = () => {
   const [topCourses, setTopCourses] = useState([]);
-  const [courses] = useCourse();
-  //   console.log(courses);
+  // useState is a built-in hook of react
 
+  const [courses] = useCourse(); // a custom hook
+  // console.log(courses);
+
+   // useEffect is a built-in hook of react
   useEffect(() => {
     const sortedCourses = courses.sort(
       (a, b) => b.totalStudent - a.totalStudent

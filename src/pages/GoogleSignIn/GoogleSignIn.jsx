@@ -37,7 +37,7 @@ const GoogleSignIn = ({ method }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("inserted successfully samiha");
+            console.log("inserted successfully lingujoy");
             console.log(data);
             setMsg(data.message);
 

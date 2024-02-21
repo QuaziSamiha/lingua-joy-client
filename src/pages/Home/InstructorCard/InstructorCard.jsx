@@ -1,5 +1,5 @@
 const InstructorCard = ({ topInstructor }) => {
-  console.log(topInstructor);
+  // console.log(topInstructor);
   const { userName, userPhoto, userEmail } = topInstructor;
   return (
     <div

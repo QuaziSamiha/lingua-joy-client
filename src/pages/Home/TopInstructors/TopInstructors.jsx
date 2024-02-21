@@ -19,7 +19,7 @@ const TopInstructors = () => {
     setTopInstructors(top6Instructors);
   }, [allUsers]);
 
-  console.log(topInstructors);
+  // console.log(topInstructors);
 
   if (allUsers.length == 0 && isLoadingAllUsers) {
     return (

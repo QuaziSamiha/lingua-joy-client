@@ -10,7 +10,7 @@ const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation(); // tracking location
 
   const from = location.state?.from?.pathname || "/";
   console.log("from", from);
@@ -24,7 +24,7 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // console.log(data);
+    console.log(data);
     createUser(data.email, data.password)
       .then((userCredential) => {
         // Signed up
@@ -53,7 +53,7 @@ const SignUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("inserted successfully samiha");
+            console.log("inserted successfully");
             console.log(data);
           });
         Swal.fire({

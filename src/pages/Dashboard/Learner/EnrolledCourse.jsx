@@ -2,8 +2,8 @@ import useEnrolled from "../../../hooks/useEnrolled";
 
 const EnrolledCourse = () => {
 
-  const [enrolledCourses] = useEnrolled()
-  console.log(enrolledCourses)
+  const [enrolledCourses] = useEnrolled();
+  // console.log(enrolledCourses);
 
   return (
     <>

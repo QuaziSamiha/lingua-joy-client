@@ -17,6 +17,7 @@ const CourseDetail = () => {
   const { user } = useContext(AuthContext);
   // console.log(user)
   const [refetchCart] = useCart();
+  // destructuring object
   const {
     _id,
     courseName,
@@ -131,6 +132,7 @@ const CourseDetail = () => {
               <QuestionAnswer />
             </div>
           </div>
+          {/* for course outline */}
           <div className="mx-3 lg:mx-0 lg:w-1/3  bg-[#ba68c8]">
             <div className="my-4">
               <div className="flex justify-center py-3 mx-2 lg:mx-6">

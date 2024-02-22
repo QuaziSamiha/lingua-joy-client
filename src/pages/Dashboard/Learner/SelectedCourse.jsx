@@ -4,10 +4,11 @@ import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 
 const SelectedCourse = () => {
-  const [cart, refetchCart] = useCart()
-  console.log(cart)
+  const [cart, refetchCart] = useCart();
+  // console.log(cart);
+
   const handleDelete = (course) => {
-    console.log(course)
+    // console.log(course);
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",

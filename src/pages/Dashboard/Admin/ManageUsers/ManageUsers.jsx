@@ -7,7 +7,7 @@ const ManageUsers = () => {
 
   const handleMakeAdmin = (user) => {
     // console.log("clicked");
-    console.log(user);
+    // console.log(user);
     fetch(`http://localhost:5000/users/admin/${user._id}`, {
       method: "PATCH",
     })
@@ -28,7 +28,7 @@ const ManageUsers = () => {
   };
   const handleMakeInstructor = (user) => {
     // console.log("clicked");
-    console.log(user);
+    // console.log(user);
     fetch(`http://localhost:5000/users/instructor/${user._id}`, {
       method: "PATCH",
     })

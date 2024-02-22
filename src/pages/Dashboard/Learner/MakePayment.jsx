@@ -14,16 +14,17 @@ const MakePayment = () => {
   const paidCourse = courses.filter(
     (findCourse) => findCourse._id === course.courseId
   );
-  console.log(paidCourse[0]);
+  // console.log(paidCourse[0]);
   const { user } = useContext(AuthContext);
   const [refetchEnrolledCourse] = useEnrolled();
   const [refetchCart] = useCart();
 
   const handlePayment = (course) => {
-    console.log(course);
+    // console.log(course);
+
     if (user && user.email) {
       const addingCourse = { ...course };
-      console.log(addingCourse)
+      // console.log(addingCourse)
       fetch(`http://localhost:5000/enrolledCourses`, {
         method: "POST",
         headers: {
@@ -33,7 +34,7 @@ const MakePayment = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.insertedId) {
             refetchEnrolledCourse;
             fetch(`http://localhost:5000/carts/${course._id}`, {

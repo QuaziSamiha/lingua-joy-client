@@ -21,14 +21,14 @@ const MyCourses = () => {
   const instructorCourses = courses.filter(
     (course) => course.instructorEmail == user.email
   );
-  console.log(instructorCourses);
+  // console.log(instructorCourses);
 
   return (
     <>
       <section className="w-full">
         <div className="mx-16 my-12">
           <div className="bg-[#ba68c8] py-4 rounded-t-lg font-bold leading-3 text-white">
-            <h1 className="text-2xl pl-4">Total Course: {7}</h1>
+            <h1 className="text-2xl pl-4">Total Course: {instructorCourses.length}</h1>
           </div>
           <div className="mt-4">
             <div className="overflow-x-auto">

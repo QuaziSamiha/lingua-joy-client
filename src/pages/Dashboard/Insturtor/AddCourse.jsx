@@ -8,11 +8,13 @@ const AddCourse = () => {
   // console.log(user.photoURL)
   // console.log(user.email, user.displayName)
   const { email, displayName } = user;
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     // console.log(data);
     const newCourse = {
@@ -38,7 +40,7 @@ const AddCourse = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("inserted course successfully samiha");
+        console.log("inserted course successfully linguajoy");
         console.log(data);
         Swal.fire({
           position: "top-end",

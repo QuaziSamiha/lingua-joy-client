@@ -7,7 +7,7 @@ import "aos/dist/aos.css"; // Import AOS styles
 import AOS from "aos";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "./providers/AuthProvider/AuthProvider";
-import router from "./Routes/Routes";
+import router from "./routes/Routes.jsx";
 // main.jsx -- ENTRY POINT OF REACT
 
 // used for animation
